@@ -4,8 +4,8 @@ const express = require("express");
 const cors = require("cors");
 
 const PORT = process.env.PORT || 8080;
-const connect = require("./src/Config/db");
-const signupRoute = require("./src/Signup/signup.route");
+const connect = require("./Config/db");
+const signupRoute = require("./Signup/signup.route");
 
 const app = express();
 
