@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express.Router();
 
-const Signup = require("./signup.model");
+const Signup = require("../models/signup.model");
 
 const { v4: uuidv4 } = require('uuid');
 

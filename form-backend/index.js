@@ -5,7 +5,7 @@ const cors = require("cors");
 
 const PORT = process.env.PORT || 8080;
 const connect = require("./src/Config/db");
-const signupRoute = require("./src/Signup/signup.route");
+const signupRoute = require("./src/routes/signup.route");
 
 const app = express();
 
@@ -23,3 +23,9 @@ app.listen(PORT, async () => {
     console.log(e);
   }
 });
+
+
+
+
+
+
