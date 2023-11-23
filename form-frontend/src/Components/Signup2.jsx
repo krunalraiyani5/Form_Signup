@@ -66,7 +66,7 @@ const Signup2 = () => {
     e.preventDefault();
     try {
       let res = await axios.post(
-        "http://localhost:8080/signup",
+        "https://pos-registration.onrender.com/signup",
         {
           name,
           email,
