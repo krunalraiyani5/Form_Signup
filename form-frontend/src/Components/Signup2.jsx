@@ -14,6 +14,8 @@ const Signup2 = () => {
 
   const [Mob_valid, setMob_valid] = useState(true);
 
+  const [Name_valid, setName_valid] = useState(true);
+
   const validStyle = {
     border: "2px solid #E5E7E8",
   };
@@ -51,7 +53,7 @@ const Signup2 = () => {
   };
   const validEmail = (e) => {
     var validRegex =
-      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (e.target.value.match(validRegex)) {
       setEmail_valid(true);
       setEmail(e.target.value);
@@ -86,7 +88,7 @@ const Signup2 = () => {
         setAlertTitle("Success!");
         setTimeout(() => {
           setAlertVisible(false);
-         
+
         }, 2000);
       } else {
         // alert(data.msg)
@@ -98,8 +100,23 @@ const Signup2 = () => {
           setAlertVisible(false);
         }, 5000);
       }
-    } catch (e) {}
+    } catch (e) { }
   };
+
+  const validName = (e) => {
+
+    const inputValue = e.target.value;
+    setName(inputValue);
+
+    const nameParts = inputValue.split(' ');
+    if (nameParts.length >= 2 && nameParts[1].length>=1) {
+      setName_valid(true)
+    } else {
+      setName_valid(false)
+    }
+
+
+  }
 
   return (
     <div className="h-screen  ">
@@ -109,7 +126,8 @@ const Signup2 = () => {
         <form className="bg-white p-10 sm:p-15  rounded-md shadow-lg shadow-blue-500/50 2xl:w-[30%] 2xl:mt-[150px] mt-[100px]">
           <h1 className="text-gray-800 font-bold text-2xl mb-1">Hello</h1>
           <p className="text-sm font-normal text-gray-600 mb-7">Welcome</p>
-          <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
+          <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4"
+              style={Name_valid ? validStyle : notValidStyle}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 text-gray-400"
@@ -123,7 +141,7 @@ const Signup2 = () => {
               />
             </svg>
             <input
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => validName(e)}
               className="pl-2 outline-none border-none w-[100%]"
               type="text"
               name="name"
@@ -189,8 +207,8 @@ const Signup2 = () => {
 
           <button
             onClick={(e) => handleSignUp(e)}
-            className="block w-full bg-blue-200 mt-4 py-2 rounded-2xl text-white font-semibold mb-2 hover:cursor-pointer hover:bg-blue-500"
-            disabled={!Email_valid || !Mob_valid || !name || !email || !mob}
+            className="block w-full bg-blue-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2"
+            disabled={!Email_valid || !Mob_valid || !Name_valid || !name || !email || !mob}
           >
             Sign Up
           </button>
