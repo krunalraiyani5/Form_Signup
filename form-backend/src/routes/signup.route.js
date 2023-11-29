@@ -13,7 +13,10 @@ app.post("/", async (req, res) => {
     if (user.length > 0) {
       return res.send({status : "Already a user", msg:"This Email Already used Please Use Different Email ID."});
     } else {
-      const uniqueID = uuidv4();
+      const fixedPart = "Analah@"
+      
+      const unique = uuidv4().replace(/-/g, '').substring(0, 5);
+      const uniqueID = fixedPart + unique ;
       let newUser = await Signup.create({
         ...req.body,
         uniqueID
