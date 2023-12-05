@@ -147,6 +147,8 @@ const Signup2 = () => {
               name="name"
               id="name"
               placeholder="Full name"
+              autoFocus={true}
+              
             />
           </div>
 

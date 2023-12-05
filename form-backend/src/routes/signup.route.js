@@ -6,7 +6,7 @@ const Signup = require("../models/signup.model");
 const { v4: uuidv4 } = require('uuid');
 
 app.post("/", async (req, res) => {
-  const { email, name, mobile } = req.body;
+  const { email, name, mobile, remainingTime } = req.body;
     
   try {
     let user = await Signup.find({ email });
@@ -29,16 +29,7 @@ app.post("/", async (req, res) => {
   }
 });
 
-// app.get("/", async (req, res) => {
- 
-    
-//   try {
-//     let user = await Signup.find();
-//    res.send({UserDetails : user})
-//   } catch (e) {
-//     res.send("Bad Request");
-//   }
-// });
+
 
 
 module.exports = app;
