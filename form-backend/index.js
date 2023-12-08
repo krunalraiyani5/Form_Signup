@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/signup", signupRoute);
+app.use("/", signupRoute);
 app.use("/timer", timerRoute);
 
 

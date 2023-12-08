@@ -5,7 +5,7 @@ const Signup = require("../models/signup.model");
 
 const { v4: uuidv4 } = require('uuid');
 
-app.post("/", async (req, res) => {
+app.post("/signup", async (req, res) => {
   const { email, name, mobile, remainingTime } = req.body;
     
   try {
@@ -26,6 +26,25 @@ app.post("/", async (req, res) => {
     }
   } catch (e) {
     res.send("Please Fill All Credendtials");
+  }
+});
+
+app.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    let user = await Signup.findOne({ email });
+    if (user) {
+      if (user.password === password) {
+        return res.send({Status : "Ok", msg:"login successful", uID:  uniqueID, email: email});
+      } else {
+        return res.send("Wrong Password!!");
+      }
+    } else {
+      return res.send("User Does not Exist");
+    }
+  } catch (e) {
+    res.send(e.message);
   }
 });
 
