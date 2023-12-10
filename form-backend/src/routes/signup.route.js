@@ -3,10 +3,9 @@ const app = express.Router();
 
 const Signup = require("../models/signup.model");
 
-const { v4: uuidv4 } = require('uuid');
-
+const { v4: uuidv4 } = require('uuid')
 app.post("/signup", async (req, res) => {
-  const { email, name, mobile, remainingTime } = req.body;
+  const { email, name, mobile, password } = req.body;
     
   try {
     let user = await Signup.find({ email });
@@ -36,12 +35,14 @@ app.post("/login", async (req, res) => {
     let user = await Signup.findOne({ email });
     if (user) {
       if (user.password === password) {
-        return res.send({Status : "Ok", msg:"login successful", uID:  uniqueID, email: email});
+        console.log(user)
+        const remainingTimeInSeconds = user.remainingTime;
+        return res.send({Status : "Ok", msg:"login successful", email: email, remainingTimeInSeconds});
       } else {
-        return res.send("Wrong Password!!");
+        return res.send({Status: "Failed", msg: "Wrong Password!!"});
       }
     } else {
-      return res.send("User Does not Exist");
+      return res.send({Status: "Error", msg: "User Does not Exist"});
     }
   } catch (e) {
     res.send(e.message);
