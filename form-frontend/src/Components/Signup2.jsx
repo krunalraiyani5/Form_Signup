@@ -6,12 +6,21 @@ import axios from "axios";
 import call from "../Call_Icon.png";
 import { Link } from "react-router-dom";
 
+import Hide_pass from "../hide_pass.png";
+import Open_pass from "../show_pass.png";
+
 const Signup2 = () => {
   const [alertVisible, setAlertVisible] = useState(false);
   const [alertType, setAlertType] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
   const [alertTitle, setAlertTitle] = useState("");
   const [password, setPassword] = useState('');
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const [Email_valid, setEmail_valid] = useState(true);
 
@@ -258,11 +267,26 @@ const Signup2 = () => {
             <input
               onChange={(e) => validatePassword(e)}
               className="pl-2 outline-none border-none w-[100%]"
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               name="pass"
               id="pass"
               placeholder="Password"
             />
+
+<div className="eye-icon" onClick={togglePasswordVisibility}>
+
+{
+    showPassword ? 
+    
+    <img src={Open_pass} alt="open" className="w-[15px] h-[15px]"/>
+    
+     :
+     <>
+     <img src={Hide_pass} alt="close" className="w-[15px] h-[15px]" />
+     </> 
+}
+
+</div>
 
 {/* <input type="password" value={password} onChange={validatePassword} /> */}
           </div>
