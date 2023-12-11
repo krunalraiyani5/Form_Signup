@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 import Hide_pass from "../hide_pass.png";
 import Open_pass from "../show_pass.png";
 
+
+
 const Signup2 = () => {
   const [alertVisible, setAlertVisible] = useState(false);
   const [alertType, setAlertType] = useState("");

@@ -17,9 +17,6 @@ const Login = () => {
 
   const [Email_valid, setEmail_valid] = useState(true);
 
-  const [Mob_valid, setMob_valid] = useState(true);
-
-  const [Name_valid, setName_valid] = useState(true);
   const [Pass_valid, setPass_valid] = useState(true);
 
   const [showPassword, setShowPassword] = useState(false);
@@ -40,34 +37,11 @@ const Login = () => {
     border: "1px solid red",
   };
 
-  const [name, setName] = useState("");
+ 
   const [email, setEmail] = useState("");
-  const [mob, setMob] = useState("");
 
-  const validMob = (e) => {
-    let regex = new RegExp(/(0|91)?[6-9][0-9]{9}/);
-    let mobile_number = e.target.value;
-    // if mobile_number is empty return false
-    if (mobile_number == null) {
-      console.log("mob not valid");
-      setMob("");
-      setMob_valid(false);
-      return "false";
-    }
 
-    // Return true if the mobile_number matched the ReGex
-    if (regex.test(mobile_number) == true) {
-      setMob(e.target.value);
-      setMob_valid(true);
-      console.log("mob valid");
-      return "true";
-    } else {
-      console.log("mob not valid");
-      setMob("");
-      setMob_valid(false);
-      return "false";
-    }
-  };
+ 
   const validEmail = (e) => {
     var validRegex =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -85,20 +59,19 @@ const Login = () => {
     e.preventDefault();
     try {
       let res = await axios.post(
-        "https://pos-registration.onrender.com/signup",
+        "https://pos-registration.onrender.com/login",
         {
-          name,
+          
           email,
-          mobile: mob,
           password
         }
       );
       let data = res.data;
 
       if (data.Status === "Ok") {
-        document.getElementById("name").value = "";
+        
         document.getElementById("email").value = "";
-        document.getElementById("mob").value = "";
+       
 
         setAlertType("success");
         setAlertMessage(data.msg);
@@ -121,20 +94,7 @@ const Login = () => {
     } catch (e) { }
   };
 
-  const validName = (e) => {
 
-    const inputValue = e.target.value;
-    setName(inputValue);
-
-    const nameParts = inputValue.split(' ');
-    if (nameParts.length >= 2 && nameParts[1].length>=1) {
-      setName_valid(true)
-    } else {
-      setName_valid(false)
-    }
-
-
-  }
 
   const validatePassword = (e) => {
 
