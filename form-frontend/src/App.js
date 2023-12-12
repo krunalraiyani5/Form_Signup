@@ -6,6 +6,7 @@ import Signup2 from './Components/Signup2';
 import { Routes, Route, Navigate } from "react-router-dom";
 import Login from './Components/Login';
 import PasswordInput from './Components/Password';
+import POS from "./Layout";
 
 // import PasswordValidator1 from './Components/Tool_tip';
 // import PasswordValidator2 from './Components/Tool_tip2';
@@ -21,7 +22,8 @@ function App() {
       <Route path="/" element={<Signup2 />} />
       
       <Route path="/login" element={<Login />} />
-      <Route path="/Pas" element={<PasswordInput />} />
+      {/* <Route path="/Pas" element={<PasswordInput />} /> */}
+      <Route path="admin/*" element={<POS />} />
 
     </Routes>
       </div>

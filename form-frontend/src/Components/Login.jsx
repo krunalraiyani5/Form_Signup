@@ -7,8 +7,13 @@ import call from "../Call_Icon.png";
 import { Link } from "react-router-dom";
 import Hide_pass from "../hide_pass.png";
 import Open_pass from "../show_pass.png";
-
+import { useContext } from "react";
+import { Timer_Context } from "../Context/Timer_context";
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
+
+const {elapsedTime, Set_Elapsed, Set_Email_User} = useContext(Timer_Context);
+const navigate = useNavigate();
   const [alertVisible, setAlertVisible] = useState(false);
   const [alertType, setAlertType] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
@@ -67,12 +72,14 @@ const Login = () => {
         }
       );
       let data = res.data;
+      console.log(data.remainingTimeInSeconds)
 
       if (data.Status === "Ok") {
-        
+        localStorage.setItem('email', data.email);
+        localStorage.setItem('time', data.remainingTimeInSeconds);
         document.getElementById("email").value = "";
-       
-
+        Set_Email_User(data.email)
+        Set_Elapsed(data.remainingTimeInSeconds);
         setAlertType("success");
         setAlertMessage(data.msg);
         setAlertVisible(true);
@@ -81,6 +88,8 @@ const Login = () => {
           setAlertVisible(false);
 
         }, 2000);
+        // window.location.href= "/admin/training";
+        navigate("/admin/training");
       } else {
         // alert(data.msg)
         setAlertType("error");

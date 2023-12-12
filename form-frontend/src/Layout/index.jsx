@@ -1,9 +1,9 @@
 import React from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-import Navbar from "components/navbar";
-import Sidebar from "components/sidebar";
-import Footer from "components/footer/Footer";
-import routes from "routes.js";
+import Navbar from "../Components/navbar";
+import Sidebar from "../Components/sidebar";
+import Footer from "../Components/footer/Footer";
+import routes from "../routes";
 
 export default function Admin(props) {
   const { ...rest } = props;
@@ -24,11 +24,11 @@ export default function Admin(props) {
   const getActiveRoute = (routes) => {
     let activeRoute = "Main Dashboard";
     for (let i = 0; i < routes.length; i++) {
-      console.log(routes[i].alterPath, "getActiveRoute")
+     
       
       if (
         window.location.href.indexOf(
-          routes[i].alterPath + "/" + routes[i].path
+          routes[i].layout + "/" + routes[i].path
         ) !== -1
       ) {
         setCurrentRoute(routes[i].name);
@@ -39,9 +39,9 @@ export default function Admin(props) {
   const getActiveNavbar = (routes) => {
     let activeNavbar = false;
     for (let i = 0; i < routes.length; i++) {
-      console.log(routes[i].alterPath, "getActiveNavbar");
+     
       if (
-        window.location.href.indexOf(routes[i].alterPath + routes[i].path) !== -1
+        window.location.href.indexOf(routes[i].layout + routes[i].path) !== -1
       ) {
         return routes[i].secondary;
       }

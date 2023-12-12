@@ -1,0 +1,402 @@
+[
+    {
+        "Question": "1. An asset may be___________",
+        "Options": {
+            "a": "Physical",
+            "b": "Non-Physical",
+            "c": "Personal",
+            "d": "All of the above"
+        },
+        "Correct_Answer": "d"
+    },
+    {
+        "Question": "2. If a house caught fire, then there would be___________ loss to the owner.",
+        "Options": {
+            "a": "Emotional",
+            "b": "Personal",
+            "c": "Financial",
+            "d": "None of the above"
+        },
+        "Correct_Answer": "c"
+    },
+    {
+        "Question": "3. The Company which pools the money and compensates the unfortunate few is called as ___________",
+        "Options": {
+            "a": "Insured",
+            "b": "Insurer",
+            "c": "Compensator",
+            "d": "Policyholder"
+        },
+        "Correct_Answer": "b"
+    },
+    {
+        "Question": "4. Risk transfer through risk pooling is called ___________",
+        "Options": {
+            "a": "Savings",
+            "b": "Insurance",
+            "c": "Investments",
+            "d": "Transfer"
+        },
+        "Correct_Answer": "b"
+    },
+    {
+        "Question": "5. Life insurance is required to face the risk of ___________",
+        "Options": {
+            "a": "Dying too early",
+            "b": "Living too long",
+            "c": "Both of the above",
+            "d": "None of the above"
+        },
+        "Correct_Answer": "c"
+    },
+    {
+        "Question": "6. Human beings are considered to be an ___________ generating asset.",
+        "Options": {
+            "a": "Income",
+            "b": "Expense",
+            "c": "Cost",
+            "d": "Emotion"
+        },
+        "Correct_Answer": "a"
+    },
+    {
+        "Question": "7. The thumb rule is that one should have life insurance",
+        "Options": {
+            "a": "10 to 15 times of his/her annual Income",
+            "b": "11 to 16 times of his/her annual Income",
+            "c": "12 to 15 times of his/her annual Income",
+            "d": "8 to 12 times of his/her annual Income"
+        },
+        "Correct_Answer": "c"
+    },
+    {
+        "Question": "8. Which among the following is a method of risk transfer?",
+        "Options": {
+            "a": "Bank Fixed Deposit",
+            "b": "Insurance",
+            "c": "Equity Shares",
+            "d": "Real Estate"
+        },
+        "Correct_Answer": "b"
+    },
+    {
+        "Question": "9. Which of the following is not a factor in determining life insurance premium?",
+        "Options": {
+            "a": "Mortality",
+            "b": "Rebate",
+            "c": "Reserves",
+            "d": "Management expenses"
+        },
+        "Correct_Answer": "b"
+    },
+    {
+        "Question": "10. When is a policy deemed to have lapsed?",
+        "Options": {
+            "a": "If the premiums are not paid within the due date",
+            "b": "If the premiums are not paid before the due date",
+            "c": "If the premiums are not paid even during the days of grace period",
+            "d": "If the policy is surrendered"
+        },
+        "Correct_Answer": "c"
+    },
+    {
+        "Question": "11. Life Insurance business was nationalized in _____",
+        "Options": {
+            "a": "1954",
+            "b": "1956",
+            "c": "1958",
+            "d": "1966"
+        },
+        "Correct_Answer": "b"
+    },
+    {
+        "Question": "12. Non- Life Insurance business was nationalized in _____",
+        "Options": {
+            "a": "1956",
+            "b": "1962",
+            "c": "1972",
+            "d": "1975"
+        },
+        "Correct_Answer": "c"
+    },
+    {
+        "Question": "13. Risk is an ____ event which may incur financial loss to someone.",
+        "Options": {
+            "a": "Adverse",
+            "b": "Preferred",
+            "c": "Beneficial",
+            "d": "Favoured"
+        },
+        "Correct_Answer": "a"
+    },
+    {
+        "Question": "14. Insurance Regulatory and Development authority (IRDA) act was passed by parliament in ______________",
+        "Options": {
+            "a": "1998",
+            "b": "1999",
+            "c": "2000",
+            "d": "2001"
+        },
+        "Correct_Answer": "b"
+    },
+    {
+        "Question": "15. In insurance contract, the insured gives _____ to the insurer, in turn insurer gives _____ to the insured as benefit.",
+        "Options": {
+            "a": "Premium and sum assured",
+            "b": "Sum assured and Premium",
+            "c": "Charges and facility",
+            "d": "Facility and charges"
+        },
+        "Correct_Answer": "a"
+    },
+    {
+        "Question": "16. It is expressed at the rate of per ______ sum assured.",
+        "Options": {
+            "a": "Hundred",
+            "b": "Thousand",
+            "c": "Lakh",
+            "d": "Million"
+        },
+        "Correct_Answer": "b"
+    },
+    {
+        "Question": "17. Rebates in premium are available as rebate for ________",
+        "Options": {
+            "a": "Sum Assured",
+            "b": "Mode of Premium",
+            "c": "Both of the above",
+            "d": "None of the above"
+        },
+        "Correct_Answer": "c"
+    },
+    {
+        "Question": "18. The standard length of the grace period is ____________",
+        "Options": {
+            "a": "One Day",
+            "b": "One Week",
+            "c": "One Fortnight",
+            "d": "One Month"
+        },
+        "Correct_Answer": "d"
+    },
+    {
+        "Question": "19. In ______ assignment, the title automatically reverts back to the assignor on fulfilling of the specified condition",
+        "Options": {
+            "a": "Absolute",
+            "b": "Conditional",
+            "c": "Both of the above",
+            "d": "None of the above"
+        },
+        "Correct_Answer": "b"
+    },
+    {
+        "Question": "20. Insurable interest forms the ______ basis for deciding whether insurance can be taken out or not.",
+        "Options": {
+            "a": "Formal",
+            "b": "Personal",
+            "c": "Legal",
+            "d": "Official"
+        },
+        "Correct_Answer": "c"
+    },
+    {
+        "Question": "21. Insurable interest is deemed to exist in the following relationship.",
+        "Options": {
+            "a": "Self",
+            "b": "Spouse",
+            "c": "Both of the above",
+            "d": "None of the above"
+        },
+        "Correct_Answer": "c"
+    },
+    {
+        "Question": "22. The concept of Uberrima fides is also known as the principle of ____",
+        "Options": {
+            "a": "Normal faith",
+            "b": "Utmost Good faith",
+            "c": "Insurable interest",
+            "d": "Indemnity"
+        },
+        "Correct_Answer": "b"
+    },
+    {
+        "Question": "23. A fact that would affect the judgment of a prudent insurance underwriter in deciding whether to accept the risk or not is called ______.",
+        "Options": {
+            "a": "Normal fact",
+            "b": "Desired fact",
+            "c": "Prudent fact",
+            "d": "Material fact"
+        },
+        "Correct_Answer": "d"
+    },
+    {
+        "Question": "24. Life Insurance contracts are also known as _____ contracts and the principle of indemnity does not apply to them",
+        "Options": {
+            "a": "Value",
+            "b": "Profit",
+            "c": "Loss",
+            "d": "Forfeiture"
+        },
+        "Correct_Answer": "a"
+    },
+    {
+        "Question": "25. Agent as the _____ underwriter should include all material facts and particulars about the policyholders.",
+        "Options": {
+            "a": "Primary",
+            "b": "Secondary",
+            "c": "Tertiary",
+            "d": "Official"
+        },
+        "Correct_Answer": "a"
+    },
+    {
+        "Question": "26. Details pertaining to physical features like height, weight, etc. would be included in the ______ report.",
+        "Options": {
+            "a": "Underwriting",
+            "b": "Financial",
+            "c": "Medical Examiner’s",
+            "d": "Legal"
+        },
+        "Correct_Answer": "c"
+    },
+    {
+        "Question": "27. Age proof are categorized as ______",
+        "Options": {
+            "a": "Standard age proof",
+            "b": "Non-standard age proof",
+            "c": "Both of the above",
+            "d": "None of the above"
+        },
+        "Correct_Answer": "c"
+    },
+    {
+        "Question": "28. An insurance contract commences when the life insurance company issues a ______",
+        "Options": {
+            "a": "Renewal Premium receipt",
+            "b": "Subsequent Premium receipt",
+            "c": "First Premium receipt",
+            "d": "Normal Premium receipt"
+        },
+        "Correct_Answer": "c"
+    },
+    {
+        "Question": "29. Key components of the policy document are______________",
+        "Options": {
+            "a": "Policy Schedule",
+            "b": "Standard Provisions",
+            "c": "Specific Policy Provisions",
+            "d": "All of the above"
+        },
+        "Correct_Answer": "d"
+    },
+    {
+        "Question": "30. The point of a Salesperson is identified by his _______",
+        "Options": {
+            "a": "Aadhar Card",
+            "b": "PAN Card",
+            "c": "Either of the above",
+            "d": "None of the above"
+        },
+        "Correct_Answer": "c"
+    },
+    {
+        "Question": "31. POSP has to mandatorily undergo _____ training and pass the required exam to sell the products.",
+        "Options": {
+            "a": "10 hours",
+            "b": "15 hours",
+            "c": "25 hours",
+            "d": "50 hours"
+        },
+        "Correct_Answer": "b"
+    },
+    {
+        "Question": "32. POSP can sell only _____ type of products.",
+        "Options": {
+            "a": "Simple products",
+            "b": "Complex products",
+            "c": "All products",
+            "d": "Only health products"
+        },
+        "Correct_Answer": "a"
+    },
+    {
+        "Question": "33. POSP can sell pure-term plans____",
+        "Options": {
+            "a": "With Return of Premium",
+            "b": "Without Return of Premium",
+            "c": "Both of the above",
+            "d": "None of the above"
+        },
+        "Correct_Answer": "c"
+    },
+    {
+        "Question": "34. Among pension plans, POSP can sell only ______",
+        "Options": {
+            "a": "Immediate Annuity Plans",
+            "b": "Deferred Annuity Plans",
+            "c": "Single Premium Deferred Annuity Plans",
+            "d": "Limited Premium Deferred Annuity Plans"
+        },
+        "Correct_Answer": "a"
+    },
+    {
+        "Question": "35. POSP should be above 18 years of age and should be a minimum ______ Pass.",
+        "Options": {
+            "a": "Post Graduate",
+            "b": "Graduate",
+            "c": "12th Standard",
+            "d": "10th Standard"
+        },
+        "Correct_Answer": "d"
+    },
+    {
+        "Question": "36. Photo ID proof is the only document required for premium below ______",
+        "Options": {
+            "a": "Rs. 1,00,000",
+            "b": "Rs. 50,000",
+            "c": "Rs. 25,000",
+            "d": "Rs. 10,000"
+        },
+        "Correct_Answer": "d"
+    },
+    {
+        "Question": "37. Standard income proof is required for annual premium above _____",
+        "Options": {
+            "a": "Rs. 5,00,000",
+            "b": "Rs. 1,00,000",
+            "c": "Rs. 50,000",
+            "d": "Rs. 10,000"
+        },
+        "Correct_Answer": "a"
+    },
+    {
+        "Question": "38. POSP must ensure that the premium collected is to be deposited to the Company account within _____",
+        "Options": {
+            "a": "12 Hours",
+            "b": "24 Hours",
+            "c": "36 Hours",
+            "d": "48 Hours"
+        },
+        "Correct_Answer": "b"
+    },
+    {
+        "Question": "39. Customer logs a complaint through _____",
+        "Options": {
+            "a": "Email",
+            "b": "Letter",
+            "c": "Both of the above",
+            "d": "None of the above"
+        },
+        "Correct_Answer": "c"
+    },
+    {
+        "Question": "40. Customers who have complaints are required to first approach the grievance/customer complaints cell of _____",
+        "Options": {
+            "a": "Our Company",
+            "b": "IRDA",
+            "c": "Government of India",
+            "d": "Ombudsman"
+        },
+        "Correct_Answer": "a"
+    }
+]
