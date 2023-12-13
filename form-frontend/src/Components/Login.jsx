@@ -131,7 +131,7 @@ const navigate = useNavigate();
   };
 
   return (
-    <div className="h-screen  ">
+    <div className="h-screen  bg-gradient-to-r from-teal-500 via-blue-500 to-indigo-500 h-[300px]">
       {/* <Header /> */}
 
       <div className="flex w-[100%]   justify-center py-10 items-center m-[auto] ">

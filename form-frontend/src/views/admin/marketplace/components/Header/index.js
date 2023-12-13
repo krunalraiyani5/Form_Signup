@@ -29,7 +29,7 @@ const Header = () => {
   };
 
   return (
-    <Menu stackable inverted>
+    <Menu stackable inverted className=''>
       <Menu.Item header>
         <h1> POS Exam </h1>
       </Menu.Item>

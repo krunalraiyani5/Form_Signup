@@ -15,7 +15,7 @@ const WeeklyRevenue = () => {
   const tim = localStorage.getItem('time')
   console.log(tim, "timer get")
   const [startTime, setStartTime] = useState(Date.now() - initialElapsedTime);
-  // const {elapsedTime, Set_Elapsed, email_user} = useContext(tim);
+  const {Set_Exam} = useContext(Timer_Context);
   const navigate = useNavigate()
   const [elapsedTime, Set_Elapsed] = useState(tim);
   // console.log(elapsedTime)
@@ -88,8 +88,11 @@ const WeeklyRevenue = () => {
         //   }
 
         const storedElapsedTime = localStorage.getItem('time');
-        Set_Elapsed(storedElapsedTime)
-        setIsTimerRunning(true);
+        if(storedElapsedTime){
+          Set_Elapsed(storedElapsedTime)
+          setIsTimerRunning(true);
+        }
+        
         // if (storedElapsedTime) {
         //   Set_Elapsed(parseInt(storedElapsedTime, 10));
         //   setStartTime(Date.now() - parseInt(storedElapsedTime, 10));
@@ -113,6 +116,7 @@ const WeeklyRevenue = () => {
       Set_Elapsed(0);
       setIsTimerRunning(false);
       setIsTimeCompleted(true);
+      Set_Exam();
     }
   }, [elapsedTime]);
 

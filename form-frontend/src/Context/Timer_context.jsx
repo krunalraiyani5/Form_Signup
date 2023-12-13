@@ -6,22 +6,20 @@ function TimerContextProvider({ children }) {
 
   // const time =  localStorage.getItem('time');
   // console.log(time)
-  const [elapsedTime, setElapsedTime] = useState("time");
-  const [email_user, setEmailUser] = useState("");
-  const Set_Elapsed = (time) =>{
-    setElapsedTime(time)
-  }
-  const Set_Email_User = (email) =>{
-    setEmailUser(email)
+
+  const [training_completed, setTrainingCompleted] = useState(false);
+ 
+ 
+  const Set_Exam = () =>{
+    setTrainingCompleted(true)
   }
   
 return (
     <Timer_Context.Provider
       value={{
-        elapsedTime,
-        Set_Elapsed,
-        Set_Email_User,
-        email_user
+        
+        training_completed,
+        Set_Exam
        }}
     >
       {children}

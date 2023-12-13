@@ -7,6 +7,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Login from './Components/Login';
 import PasswordInput from './Components/Password';
 import POS from "./Layout";
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 // import PasswordValidator1 from './Components/Tool_tip';
 // import PasswordValidator2 from './Components/Tool_tip2';
@@ -16,17 +17,20 @@ function App() {
     <div>
       {/* <Signup /> */}
       {/* <Signup1 /> */}
-      <div class="bg-gradient-to-r from-teal-500 via-blue-500 to-indigo-500 h-[300px]">
+    
       <Routes>
       {/* <Route path="auth/*" element={<AuthLayout />} /> */}
       <Route path="/" element={<Signup2 />} />
       
       <Route path="/login" element={<Login />} />
       {/* <Route path="/Pas" element={<PasswordInput />} /> */}
-      <Route path="admin/*" element={<POS />} />
+      
+      <Route path="admin/*" element={ <PrivateRoute> <POS /> </PrivateRoute> } />
 
     </Routes>
-      </div>
+    
+
+      
 
     
       
