@@ -3,8 +3,6 @@ const app = express.Router();
 
 const Signup = require("../models/signup.model");
 
-
-
 app.post("/", async (req, res) => {
   const { email, remainingTime, update } = req.body;
     
