@@ -17,7 +17,7 @@ app.use(cors());
 
 app.use("/", signupRoute);
 app.use("/timer", timerRoute);
-app.use("/quetion", ququetionRoute);
+app.use("/question", questionRoute);
 app.use("/answers", answersRoute);
 
 
