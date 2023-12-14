@@ -12,7 +12,7 @@ import { Timer_Context } from "../Context/Timer_context";
 import { useNavigate } from 'react-router-dom';
 const Login = () => {
 
-const {elapsedTime, Set_Elapsed, Set_Email_User} = useContext(Timer_Context);
+const {elapsedTime,  } = useContext(Timer_Context);
 const navigate = useNavigate();
   const [alertVisible, setAlertVisible] = useState(false);
   const [alertType, setAlertType] = useState("");
@@ -66,30 +66,36 @@ const navigate = useNavigate();
       let res = await axios.post(
         "https://pos-registration.onrender.com/login",
         {
-          
           email,
           password
         }
       );
       let data = res.data;
-      console.log(data.remainingTimeInSeconds)
+      console.log(data)
 
       if (data.Status === "Ok") {
+        console.log("Success");
         localStorage.setItem('email', data.email);
         localStorage.setItem('time', data.remainingTimeInSeconds);
+        localStorage.setItem('name', data.name);
+
         document.getElementById("email").value = "";
-        Set_Email_User(data.email)
-        Set_Elapsed(data.remainingTimeInSeconds);
+        
+        
         setAlertType("success");
         setAlertMessage(data.msg);
         setAlertVisible(true);
         setAlertTitle("Success!");
+        console.log("success2");
+        
         setTimeout(() => {
           setAlertVisible(false);
 
         }, 2000);
         // window.location.href= "/admin/training";
+        console.log("success3");
         navigate("/admin/training");
+        console.log('Success!');
       } else {
         // alert(data.msg)
         setAlertType("error");
@@ -131,38 +137,16 @@ const navigate = useNavigate();
   };
 
   return (
-    <div className="h-screen  bg-gradient-to-r from-teal-500 via-blue-500 to-indigo-500 h-[300px]">
+<div className="bg-gradient-to-r from-teal-500 via-blue-500 to-indigo-500 h-[300px] ">
+
+<div className="h-screen">
       {/* <Header /> */}
 
       <div className="flex w-[100%]   justify-center py-10 items-center m-[auto] ">
         <form className="bg-white p-10 pb-[25px] sm:p-15  rounded-md shadow-lg shadow-blue-500/50 2xl:w-[30%] 2xl:mt-[150px] mt-[100px]">
           <h1 className="text-gray-800 font-bold text-2xl mb-1">Hello</h1>
           <p className="text-sm font-normal text-gray-600 mb-7">Welcome</p>
-          {/* <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4"
-              style={Name_valid ? validStyle : notValidStyle}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-gray-400"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <input
-              onChange={(e) => validName(e)}
-              className="pl-2 outline-none border-none w-[100%]"
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Full name"
-              autoFocus={true}
-              
-            />
-          </div> */}
+          
 
           <div
             className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4"
@@ -191,22 +175,7 @@ const navigate = useNavigate();
               placeholder="Email Address"
             />
           </div>
-          {/* <div
-            className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4"
-            style={Mob_valid ? validStyle : notValidStyle}
-          >
-            
-
-            <img src={call} alt="call_icon" className="w-[15px] h-[15px]" />
-            <input
-              onChange={(e) => validMob(e)}
-              className="pl-2 outline-none border-none w-[100%]"
-              type="number"
-              name="mob"
-              id="mob"
-              placeholder="Mobile Number"
-            />
-          </div> */}
+          
 
           <div
             className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4"
@@ -252,7 +221,6 @@ const navigate = useNavigate();
 
 </div>
 
-{/* <input type="password" value={password} onChange={validatePassword} /> */}
           </div>
           <button
             onClick={(e) => handleSignUp(e)}
@@ -278,15 +246,7 @@ const navigate = useNavigate();
           </div>
 
           
-          {/* <span className="text-sm ml-2 hover:text-blue-500 cursor-pointer">
-            <a
-              href="https://dashboard.analahinsurance.com/customer/login"
-              target="blank"
-            >
-              {" "}
-              Already have an account? Sign In
-            </a>
-          </span> */}
+      
         </form>
 
         {alertVisible && (
@@ -294,6 +254,9 @@ const navigate = useNavigate();
         )}
       </div>
     </div>
+</div>
+
+    
   );
 };
 

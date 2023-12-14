@@ -169,7 +169,8 @@ const Signup2 = () => {
   };
 
   return (
-    <div className="h-screen bg-gradient-to-r from-teal-500 via-blue-500 to-indigo-500 h-[300px] ">
+  <div className="bg-gradient-to-r from-teal-500 via-blue-500 to-indigo-500 h-[300px] ">
+<div className="h-screen ">
       {/* <Header /> */}
 
       <div className="flex w-[100%]   justify-center py-10 items-center m-[auto] ">
@@ -330,6 +331,11 @@ const Signup2 = () => {
         )}
       </div>
     </div>
+
+  </div>
+
+
+    
   );
 };
 

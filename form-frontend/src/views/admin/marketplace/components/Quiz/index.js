@@ -54,8 +54,10 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
     });
 
     if (questionIndex === data.length - 1) {
+      let email= localStorage.getItem('email');
       const all_answers = {
-        user_answers
+        user_answers,
+        email
       }
 
       const API = `https://pos-exam-backend.onrender.com/answer`;
@@ -100,9 +102,10 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
   };
 
   const timeOver = async (timeTaken) => {
-
+    let email= localStorage.getItem('email');
     const all_answers = {
-      user_answers
+      user_answers,
+      email
     }
 
     const API = `https://pos-exam-backend.onrender.com/answer`;
