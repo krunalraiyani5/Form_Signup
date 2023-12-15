@@ -26,7 +26,7 @@ app.post("/", async (req,res) => {
         if (user) {
            
             const updatePoints = await Signup.updateOne({email},  { $set: { points: points, Exam:true }  })
-              return res.send({Status : "Ok", msg:"Exam Completed", email: email, });
+              return res.send({Status : "Ok", msg:"Exam Completed", email: email, points });
            
           } else {
             return res.send({Status: "Error", msg: "User Does not Exist"});
