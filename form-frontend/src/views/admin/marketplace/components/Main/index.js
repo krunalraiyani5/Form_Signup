@@ -5,22 +5,10 @@ import {
   Container,
   Segment,
   Item,
-  Dropdown,
-  Divider,
   Button,
   Message,
 } from 'semantic-ui-react';
 
-import mindImg from '../../images/mind.svg';
-
-import {
-  CATEGORIES,
-  NUM_OF_QUESTIONS,
-  DIFFICULTY,
-  QUESTIONS_TYPE,
-  COUNTDOWN_TIME,
-} from '../../constants';
-import { shuffle } from '../../utils';
 
 import Offline from '../Offline';
 
@@ -58,7 +46,7 @@ console.log(countdownTime&& true)
 
     if (error) setError(null);
 
-    const API = `https://pos-exam-backend.onrender.com/questions`;
+    const API = `https://pos-registration.onrender.com/question`;
 
     try{
       const res = await fetch(`${API}`);

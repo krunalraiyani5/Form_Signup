@@ -67,7 +67,8 @@ const navigate = useNavigate();
         "https://pos-registration.onrender.com/login",
         {
           email,
-          password
+          password,
+
         }
       );
       let data = res.data;
@@ -78,9 +79,9 @@ const navigate = useNavigate();
         localStorage.setItem('email', data.email);
         localStorage.setItem('time', data.remainingTimeInSeconds);
         localStorage.setItem('name', data.name);
-
+        localStorage.setItem("exam", data.exam);
         document.getElementById("email").value = "";
-        
+        localStorage.setItem('training_completed', false );
         
         setAlertType("success");
         setAlertMessage(data.msg);
@@ -108,33 +109,33 @@ const navigate = useNavigate();
       }
     } catch (e) { }
   };
-
-
-
   const validatePassword = (e) => {
 
-  const passValue = e.target.value;
-  setPassword(passValue);
+    const passValue = e.target.value;
+    setPassword(passValue);
+  
+      // Check if the password is at least 8 characters long
+      const isLengthValid = password.length >= 8;
+  
+      // Check if the password contains at least one lowercase letter
+      const hasLowercase = /[a-z]/.test(password);
+  
+      // Check if the password contains at least one uppercase letter
+      const hasUppercase = /[A-Z]/.test(password);
+  
+      // Check if the password contains at least one number
+      const hasNumber = /\d/.test(password);
+  
+      // Set the overall validity based on all criteria
+      const isValidPassword = isLengthValid && hasLowercase && hasUppercase && hasNumber; 
+  
+      setPass_valid(isValidPassword)
+      console.log(Pass_valid);
+      console.log(password);
+    };
 
-    // Check if the password is at least 8 characters long
-    const isLengthValid = password.length >= 8;
 
-    // Check if the password contains at least one lowercase letter
-    const hasLowercase = /[a-z]/.test(password);
-
-    // Check if the password contains at least one uppercase letter
-    const hasUppercase = /[A-Z]/.test(password);
-
-    // Check if the password contains at least one number
-    const hasNumber = /\d/.test(password);
-
-    // Set the overall validity based on all criteria
-    const isValidPassword = isLengthValid && hasLowercase && hasUppercase && hasNumber; 
-
-    setPass_valid(isValidPassword)
-    console.log(Pass_valid);
-    console.log(password);
-  };
+  
 
   return (
 <div className="bg-gradient-to-r from-teal-500 via-blue-500 to-indigo-500 h-[300px] ">

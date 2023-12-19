@@ -60,7 +60,7 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
         email
       }
 
-      const API = `https://pos-exam-backend.onrender.com/answer`;
+      const API = `https://pos-registration.onrender.com/answers`;
 
       const headers = {
         'Content-Type': 'application/json',
@@ -74,7 +74,10 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
           body: JSON.stringify(all_answers),
         });
         const res = await response.json();
-        console.log(res);
+        console.log(res, "answers consoled ");
+        localStorage.setItem("exam", true)
+        localStorage.setItem("points", res.points)
+
 
         return endQuiz({
           totalQuestions: data.length,
@@ -82,11 +85,7 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
           timeTaken,
           questionsAndAnswers: qna,
         });
-
-        // console.log(data.data)
-
-
-      }
+       }
       catch (e) {
         console.log(e)
 
@@ -108,7 +107,7 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
       email
     }
 
-    const API = `https://pos-exam-backend.onrender.com/answer`;
+    const API = `https://pos-registration.onrender.com/answers`;
 
     const headers = {
       'Content-Type': 'application/json',
@@ -124,7 +123,17 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
       });
       const res = await response.json();
       console.log(res);
-
+      localStorage.setItem("exam", true)
+      localStorage.setItem("date", res.date)
+      console.log(res.points)
+      const convertedNumber = parseInt(res.points, 10);
+      console.log(res.points>20)
+      if(res.points>20){
+        
+        localStorage.setItem("points", true)
+      }else{
+        localStorage.setItem("points", false)
+      }
       return endQuiz({
         totalQuestions: data.length,
         correctAnswers: res.points,

@@ -56,6 +56,30 @@ const WeeklyRevenue = () => {
   //   fetchData();
   // }, []); 
 
+
+  useEffect(() => {
+    const handleBeforeUnload = async(event) => {
+     
+      localStorage.setItem('time', elapsedTime );
+      try {
+        // Replace 'your_backend_endpoint' with the actual endpoint
+           
+          const response = await axios.post('https://pos-registration.onrender.com/timer', { email: email_user, remainingTime: elapsedTime, update: true});
+          console.log("Post Request", elapsedTime, response);
+
+        } catch (error) {
+          console.error('Error sending timer data:', error);
+        }
+        setIsTimerRunning(false);
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
+
   // Handle visibility change (user switches tabs or closes the browser)
   useEffect(() => {
     const handleVisibilityChange = async () => {
@@ -114,6 +138,16 @@ const WeeklyRevenue = () => {
   useEffect(() => {
     if (elapsedTime <= 0) {
       Set_Elapsed(0);
+      localStorage.setItem('training_completed', true );
+      // try {
+      //   // Replace 'your_backend_endpoint' with the actual endpoint
+           
+      //     const response = await axios.post('https://pos-registration.onrender.com/timer', { email: email_user, remainingTime: elapsedTime, update: true});
+      //     console.log("Post Request", elapsedTime, response);
+
+      //   } catch (error) {
+      //     console.error('Error sending timer data:', error);
+      //   }
       setIsTimerRunning(false);
       setIsTimeCompleted(true);
       Set_Exam();
