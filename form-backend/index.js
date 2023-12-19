@@ -9,7 +9,7 @@ const signupRoute = require("./src/routes/signup.route");
 const timerRoute = require("./src/routes/timer.route");
 const questionRoute = require("./src/routes/question.route");
 const answersRoute = require("./src/routes/answers.route");
-const certiRoute = require("./src/routes/certi.route");
+// const certiRoute = require("./src/routes/certi.route");
 
 const app = express();
 
@@ -20,7 +20,7 @@ app.use("/", signupRoute);
 app.use("/timer", timerRoute);
 app.use("/question", questionRoute);
 app.use("/answers", answersRoute);
-app.use("/certi", certiRoute);
+// app.use("/certi", certiRoute);
 
 
 app.listen(PORT, async () => {

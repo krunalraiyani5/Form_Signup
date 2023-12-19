@@ -8,6 +8,7 @@ const SignupSchema = new mongoose.Schema({
     uniqueID : {type : String, require: true, unique:true},
     points: {type: String},
     Exam: {type: Boolean, default: false },
+    date: {type: String},
 
     remainingTime: {
         type: Number,

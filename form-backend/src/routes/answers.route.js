@@ -23,18 +23,22 @@ app.post("/", async (req,res) => {
             }
         }
 
+
         if (user) {
-           
-            const updatePoints = await Signup.updateOne({email},  { $set: { points: points, Exam:true }  })
-              return res.send({Status : "Ok", msg:"Exam Completed", email: email, points });
+            const currentDate = new Date();
+const currentMonth = currentDate.getMonth() + 1; // Months are zero-based, so add 1
+const currentDateOfMonth = currentDate.getDate();
+const currentYear = currentDate.getFullYear();
+ const date = `${currentDateOfMonth} - ${currentMonth} - ${currentYear}`;
+
+ const updatePoints = await Signup.updateOne({email},  { $set: { points: points, Exam:true, date }})
+              return res.send({Status : "Ok", msg:"Exam Completed", email: email, points, date});
            
           } else {
             return res.send({Status: "Error", msg: "User Does not Exist"});
           }
-        
-       
 
-    }
+        }
     catch (e) {
         res.status(400).send({Status : "Error"});
      }
