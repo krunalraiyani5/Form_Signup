@@ -134,20 +134,26 @@ const WeeklyRevenue = () => {
 
 
 
-  // Set isTimeCompleted to true when the elapsed time reaches 0
+
   useEffect(() => {
     if (elapsedTime <= 0) {
       Set_Elapsed(0);
       localStorage.setItem('training_completed', true );
-      // try {
-      //   // Replace 'your_backend_endpoint' with the actual endpoint
-           
-      //     const response = await axios.post('https://pos-registration.onrender.com/timer', { email: email_user, remainingTime: elapsedTime, update: true});
-      //     console.log("Post Request", elapsedTime, response);
 
-      //   } catch (error) {
-      //     console.error('Error sending timer data:', error);
-      //   }
+      const timeCompleted = async () => {
+         try {
+             
+            const response = await axios.post('https://pos-registration.onrender.com/timer', { email: email_user, remainingTime: elapsedTime, update: true});
+            console.log("Post Request", elapsedTime, response);
+  
+          } catch (error) {
+            console.error('Error sending timer data:', error);
+          }
+      
+        
+      };
+      
+      timeCompleted();
       setIsTimerRunning(false);
       setIsTimeCompleted(true);
       Set_Exam();
@@ -157,7 +163,13 @@ const WeeklyRevenue = () => {
   return (
     <div>
     {isTimeCompleted ? (
-      <p>Time Completed!</p>
+    
+
+<>
+<p>Time Completed!</p>
+
+</>
+
     ) : (
       <section class="timeContainer">
 <div class="wrapper">

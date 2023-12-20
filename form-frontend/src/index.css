@@ -32,10 +32,12 @@ input:checked.defaultCheckbox::before {
 
 .timeContainer {
     position: fixed;
+	top: 15%;
 	z-index: 10;
 	height: 100%;
 	display: flex;
-  
+	/* border: 1px solid red; */
+    
   }
   
   .timeContainer .wrapper {
@@ -44,40 +46,51 @@ input:checked.defaultCheckbox::before {
 	max-height: 200px;
 	display: flex;
 	justify-content: space-around;
-	gap: 20px;
+	gap: 10px;
 	
   }
   
   .timeContainer .wrapper div {
-	color: #ccc;
+	/* color: #ccc; */
 	text-align: center;
 	width: 24%;
 	height: 50px;
 	border-radius: 12px;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+	/* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16); */
   }
   
   .timeContainer .wrapper div:first-child{
-	background: #00A3D0;
-	color: white;
+	color: #00A3D0;
+	background: white;
   }
   
   .timeContainer .wrapper div:nth-child(2){
 	background: #00A3D0;
-	color: white;
+	background: white;
   }
   
   .timeContainer .wrapper div:nth-child(3){
-	background: #1C1C1C;
-	color: #fff;
+	color: #00A3D0;
+	background: #fff;
   }
   
   .timeContainer .wrapper div:last-child{
-	background: #1C1C1C;
-	color: #fff;
+	color: #00A3D0;
+	background: #fff;
   }
   
   .timeContainer .wrapper div h2 {
+	font-size: 10px;
+  }
+
+  #seconds{
+	font-size: 20px;
+  }
+
+  #minutes{
+	font-size: 20px;
+  }
+  #hours{
 	font-size: 20px;
   }
   

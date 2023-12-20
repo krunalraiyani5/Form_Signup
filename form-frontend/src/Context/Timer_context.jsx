@@ -7,7 +7,7 @@ function TimerContextProvider({ children }) {
   // const time =  localStorage.getItem('time');
   // console.log(time)
 
-  const [training_completed, setTrainingCompleted] = useState(false);
+  const [training, setTrainingCompleted] = useState(false);
  
  
   const Set_Exam = () =>{
@@ -18,7 +18,7 @@ return (
     <Timer_Context.Provider
       value={{
         
-        training_completed,
+        training,
         Set_Exam
        }}
     >

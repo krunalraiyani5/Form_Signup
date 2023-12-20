@@ -33,35 +33,40 @@ const Tables = () => {
 
   const styles = {
     download: {
-      width: 50,
-      height: 50
-    }
-
+      position : 'absolute',
+      top : '20%',
+      left : "17.5%"
+  
+     
+    },
+    pdf:{
+      margin: "auto"
+    },
     
-
-  }
+   }
   return (
-      <div>
-      <div className="mt-5 grid h-full grid-cols-1 gap-5 md:grid-cols-2">
-      <PDFViewer width={800} height={1000} showToolbar={false}>
+      <div className='flex justify-center'>
+      <div className="m-auto mt-5 grid h-full grid-cols-1 gap-5 md:grid-cols-2 w-[50%]">
+      <PDFViewer width={800} height={1000} showToolbar={false} style={styles.pdf}>
         <PdfDocument invoicedata={InvoiceData} />
       </PDFViewer>
 
-      <div className='download-link'>
-        {/* <PDFDownloadLink
+      
+    
+      </div>
+
+      <div className='download-link' style={styles.download}>
+        <PDFDownloadLink
           document={<PdfDocument invoicedata={InvoiceData} />}
           fileName={fileName}
         >
           {({ blob, url, loading, error }) =>
-            loading ? "Loading..." : "Download Invoice"
+            loading ? "Loading..." : "Download POSP Certificate"
           }
-          <Image style={styles.download} src={download} />
+          {/* <Image style={styles.download} src={download} /> */}
 
-        </PDFDownloadLink> */}
+        </PDFDownloadLink>
       </div>
-    
-      </div>
-
     </div> 
    
   );

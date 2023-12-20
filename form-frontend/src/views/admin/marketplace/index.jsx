@@ -90,7 +90,7 @@ const Marketplace = () => {
 
   return (
     <div className="mt-4 grid h-full grid-cols-1 gap-5 xl:grid-cols-1 2xl:grid-cols-1">
-        <Layout>
+     <Layout>
       {loading && <Loader {...loadingMessage} />}
       {!loading && !isQuizStarted && !isQuizCompleted && (
         <Main startQuiz={startQuiz}   />
@@ -102,6 +102,7 @@ const Marketplace = () => {
         <Result {...resultData} replayQuiz={replayQuiz} resetQuiz={resetQuiz} />
       )}
     </Layout>
+       
 
     </div>
   );
