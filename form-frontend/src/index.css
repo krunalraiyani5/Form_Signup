@@ -31,19 +31,19 @@ input:checked.defaultCheckbox::before {
 
 
 .timeContainer {
-    position: fixed;
-	top: 15%;
+    position: absolute;
+	top: 60px;
 	z-index: 10;
-	height: 100%;
 	display: flex;
 	/* border: 1px solid red; */
+
     
   }
   
   .timeContainer .wrapper {
 	width: 400px;
 	padding: 20px;
-	max-height: 200px;
+	
 	display: flex;
 	justify-content: space-around;
 	gap: 10px;
