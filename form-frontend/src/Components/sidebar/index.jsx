@@ -26,9 +26,7 @@ const Sidebar = ({ open, onClose }) => {
   
         <img
             src={analah_insurance_logo}
-            className={`cursor-pointer duration-500 w-[180px] h-[50px]  ${
-              open && "rotate-[360deg]"
-            }`}
+            className={`cursor-pointer duration-500 w-[180px] h-[50px] `}
           />
      
           

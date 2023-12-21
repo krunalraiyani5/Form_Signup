@@ -7,6 +7,9 @@ import { Timer_Context } from '../../../../Context/Timer_context';
 import { Navigate } from 'react-router-dom';
 
 import { useNavigate } from 'react-router-dom';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import InvoiceData from '../../tables/jsonData/InvoiceData';
+import PdfDocument from '../../tables/Components/generateInvoice/Invoice';
 
 
 const WeeklyRevenue = () => {
@@ -24,6 +27,11 @@ const WeeklyRevenue = () => {
 
   const email_user = localStorage.getItem('email');
   console.log(email_user, "email user local")
+
+  const exam = JSON.parse(localStorage.getItem('exam'));
+  const points = JSON.parse(localStorage.getItem('points'));
+  const training_completed = JSON.parse(localStorage.getItem('training_completed'));
+  const fileName = "POSP_Certificate.pdf";
 
   // Update elapsed time every second when the timer is running
   useEffect(() => {
@@ -136,6 +144,8 @@ const WeeklyRevenue = () => {
 
 
 
+
+
   useEffect(() => {
     if (elapsedTime <= 0) {
       Set_Elapsed(0);
@@ -167,7 +177,22 @@ const WeeklyRevenue = () => {
     
 
 <>
-<p className='m-5 text-white'>Time Completed!</p>
+{
+training_completed && exam && points ? <>  
+
+ <PDFDownloadLink
+document={<PdfDocument invoicedata={InvoiceData} />}
+fileName={fileName}
+
+>
+{({ blob, url, loading, error }) =>
+  loading ? "Loading..." : "Download POSP Certificate"
+}
+{/* <Image style={styles.download} src={download} /> */}
+
+</PDFDownloadLink></> : <p className='m-5 text-white'>Time Completed!</p>
+}
+
 
 </>
 

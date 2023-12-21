@@ -14,12 +14,11 @@ const Tables = () => {
 
   const styles = {
     download: {
-      position : 'absolute',
-      top : '20%',
-      left : "17.5%"
-  
-     
-    },
+      position : 'fixed',
+      top : '15%',
+      left : "68%",
+      zIndex: 100
+      },
     pdf:{
       margin: "auto"
     },
@@ -35,8 +34,8 @@ const Tables = () => {
       
     
       </div>
-
-      <div className='download-link' style={styles.download}>
+{/* 
+      <div className='download-link ' style={styles.download}>
         <PDFDownloadLink
           document={<PdfDocument invoicedata={InvoiceData} />}
           fileName={fileName}
@@ -44,10 +43,12 @@ const Tables = () => {
           {({ blob, url, loading, error }) =>
             loading ? "Loading..." : "Download POSP Certificate"
           }
-          {/* <Image style={styles.download} src={download} /> */}
+        
 
         </PDFDownloadLink>
-      </div>
+      </div> */}
+
+     
     </div> 
    
   );

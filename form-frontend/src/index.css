@@ -117,3 +117,7 @@ input:checked.defaultCheckbox::before {
 .ui.inverted.menu{
 	background-color: #3970de;
 }
+a:hover {
+    color: #000;
+    text-decoration: none;
+}
