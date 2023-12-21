@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 import Hide_pass from "../hide_pass.png";
 import Open_pass from "../show_pass.png";
-import logo from "../assets/Icon/AI_Logo.png";
+import logo from "../assets/Icon/insurance_white.png";
 
 
 

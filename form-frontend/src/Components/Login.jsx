@@ -10,7 +10,7 @@ import Open_pass from "../show_pass.png";
 import { useContext } from "react";
 import { Timer_Context } from "../Context/Timer_context";
 import { useNavigate } from 'react-router-dom';
-import logo from "../assets/Icon/AI_Logo.png";
+import logo from "../assets/Icon/insurance_white.png";
 const Login = () => {
 
   const { elapsedTime, } = useContext(Timer_Context);
