@@ -42,7 +42,7 @@ export function SidebarLinks(props) {
                     <span
                       className={`${activeRoute(route.path) === true
                           ? "font-bold text-white"
-                          : "font-medium text-gray-600"
+                          : "font-medium text-white"
                         }`}
                     >
                       {route.icon ? route.icon : <DashIcon />}{" "}
@@ -69,7 +69,7 @@ export function SidebarLinks(props) {
                     <span
                       className={`${activeRoute(route.path) === true
                         ? "font-bold text-white"
-                        : "font-medium text-gray-600"
+                        : "font-medium text-white"
                         }`}
                     >
                       {route.icon ? route.icon : <DashIcon />}{" "}
@@ -96,7 +96,7 @@ export function SidebarLinks(props) {
                     <span
                       className={`${activeRoute(route.path) === true
                         ? "font-bold text-white"
-                        : "font-medium text-gray-600"
+                        : "font-medium text-white"
                         }`}
                     >
                       {route.icon ? route.icon : <DashIcon />}{" "}
@@ -124,7 +124,7 @@ export function SidebarLinks(props) {
                     <span
                       className={`${activeRoute(route.path) === true
                         ? "font-bold text-white"
-                        : "font-medium text-gray-600"
+                        : "font-medium text-white"
                         }`}
                     >
                       {route.icon ? route.icon : <DashIcon />}{" "}
@@ -151,7 +151,7 @@ export function SidebarLinks(props) {
                   <span
                     className={`${activeRoute(route.path) === true
                       ? "font-bold text-white"
-                          : "font-medium text-gray-600"
+                          : "font-medium text-white"
                       }`}
                   >
                     {route.icon ? route.icon : <DashIcon />}{" "}

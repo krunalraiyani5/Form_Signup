@@ -19,7 +19,7 @@ const TotalSpent = () => {
 
       
 
-      <div className="flex  flex-row justify-center sm:flex-wrap lg:flex-nowrap overflow-y-hidden border-2   2xl:w-[80%] xl:w-[70%] w-[90%] h-[80%] fixed ">
+      <div className="flex  flex-row justify-center sm:flex-wrap lg:flex-nowrap overflow-y-hidden border-2  2xl:w-[80%] xl:w-[70%] w-[90%] h-[80%] fixed ">
         
 
 <DocViewer 
