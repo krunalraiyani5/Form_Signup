@@ -9,7 +9,7 @@ const Template = args => <CountdownComponent {...args} />;
 export const Countdown = Template.bind({});
 
 Countdown.args = {
-  countdownTime: 120,
+  countdownTime: 3600,
   timeOver: () => {},
   setTimeTaken: () => {},
 };

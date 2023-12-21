@@ -9,6 +9,7 @@ const Countdown = ({ countdownTime, timeOver, setTimeTaken }) => {
   const totalTime = countdownTime * 1000;
   const [timerTime, setTimerTime] = useState(totalTime);
   const { hours, minutes, seconds } = timeConverter(timerTime);
+  console.log(`I am countdown index.js ${timerTime, hours, minutes, seconds},  `)
 
   useEffect(() => {
     const timer = setInterval(() => {

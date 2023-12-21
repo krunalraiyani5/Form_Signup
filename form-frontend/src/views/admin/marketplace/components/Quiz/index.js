@@ -74,9 +74,18 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
           body: JSON.stringify(all_answers),
         });
         const res = await response.json();
-        console.log(res, "answers consoled ");
-        localStorage.setItem("exam", true)
-        localStorage.setItem("points", res.points)
+        console.log(res, "answers consoled");
+        localStorage.setItem("exam", true);
+        localStorage.setItem("date", res.date)
+        console.log(res.points)
+        const convertedNumber = parseInt(res.points, 10);
+        console.log(res.points>20)
+        if(res.points>20){
+          
+          localStorage.setItem("points", true)
+        }else{
+          localStorage.setItem("points", false)
+        }
 
 
         return endQuiz({

@@ -20,7 +20,7 @@ const Main = ({ startQuiz }) => {
   const [questionsType, setQuestionsType] = useState('0');
   const [countdownTime, setCountdownTime] = useState({
     hours: 0,
-    minutes: 60,
+    minutes: 90,
     seconds: 0,
   });
   const [processing, setProcessing] = useState(false);
@@ -108,17 +108,17 @@ console.log(countdownTime&& true)
 
       {/* <!-- Right column container --> */}
       <div class="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
-      <div className="exam-intro-container p-5">
-      <h2 className='text-bold '>Welcome to the Sales Proficiency Exam!</h2>
-      <p>
+      <div className="exam-intro-container p-5 leading-10 text-[16px]">
+      <h2 className='font-bold  '>Welcome to the Sales Proficiency Exam!</h2>
+      <p className=''>
         This exam is designed to evaluate your knowledge and skills as a POSP.
         
         
       </p>
-      <p>
+      <p className=''>
       It consists of multiple-choice questions covering various aspects of sales, including fundamentals, product knowledge, closing techniques, and sales ethics.
       </p>
-      <p>
+      <p className='font-bold'>
         Instructions:
       </p>
       <ul>
