@@ -8,6 +8,7 @@ import {
   Button,
   Message,
 } from 'semantic-ui-react';
+import Exam_vector from "../../../../../assets/Icon/exam_vector.png";
 
 
 import Offline from '../Offline';
@@ -91,7 +92,45 @@ console.log(countdownTime&& true)
               
 
               <Item.Extra>
-                <Button
+              {/* <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com -->  */}
+<section class="">
+  <div class="h-full">
+    {/* <!-- Left column container with background--> */}
+    <div
+      class="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
+      <div
+        class="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
+        <img
+          src={Exam_vector}
+          class="w-full"
+          alt="Sample image" />
+      </div>
+
+      {/* <!-- Right column container --> */}
+      <div class="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
+      <div className="exam-intro-container p-5">
+      <h2 className='text-bold '>Welcome to the Sales Proficiency Exam!</h2>
+      <p>
+        This exam is designed to evaluate your knowledge and skills as a POSP.
+        
+        
+      </p>
+      <p>
+      It consists of multiple-choice questions covering various aspects of sales, including fundamentals, product knowledge, closing techniques, and sales ethics.
+      </p>
+      <p>
+        Instructions:
+      </p>
+      <ul>
+        <li>Read each question carefully before selecting an answer.</li>
+        <li>Choose the best answer for each question; there is only one correct answer.</li>
+        <li>Click "Submit" when you have answered all the questions.</li>
+        <li>Your results will be displayed at the end of the exam.</li>
+      </ul>
+      <p>
+        Best of luck! Let's get started.
+      </p>
+      <Button
                   primary
                   size="big"
                   icon="play"
@@ -99,13 +138,22 @@ console.log(countdownTime&& true)
                   content={processing ? 'Processing...' : 'Start Now'}
                   onClick={fetchData}
                   disabled={!allFieldsSelected || processing}
-                  style={{
-                    position: "relative",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)"
-                  }}
+                  // style={{
+                  //   position: "relative",
+                  //   top: "80%",
+                  //   left: "50%",
+                  //   transform: "translate(-50%, -50%)"
+                  // }}
                 />
+      
+    </div>
+     
+      </div>
+    </div>
+  </div>
+</section>
+              
+                
               </Item.Extra>
             </Item.Content>
           </Item>

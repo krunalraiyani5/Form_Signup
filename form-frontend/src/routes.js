@@ -23,6 +23,7 @@ import {
   MdModelTraining,
   MdAssignmentTurnedIn,
   MdAssignment,
+  MdLogout,
 } from "react-icons/md";
 
 let name = localStorage.getItem("name");
@@ -54,11 +55,11 @@ const routes = [
     component: <DataTables />,
   },
   {
-    name: name,
+    name: "Logout",
     layout: "/admin",
     alterPath: "pos",
     path: "profile",
-    icon: <MdPerson className="h-6 w-6" />,
+    icon: <MdLogout className="h-6 w-6" />,
     component: <Profile />,
   },
   // {

@@ -153,7 +153,7 @@ const Login = () => {
                 </div>
                 <form className="bg-white p-10 pb-[25px] sm:p-15  rounded-md shadow-lg shadow-blue-500/50 2xl:w-[30%] 2xl:mt-[150px] mt-[100px]">
                   <h1 className="text-gray-800 font-bold text-2xl mb-1">Hello</h1>
-                  <p className="text-sm font-normal text-gray-600 mb-7">Welcome</p>
+                  <p className="text-sm font-normal text-gray-600 mb-7 text-red">Welcome Join Analah Insurance and begin your PoSP journey!</p>
 
 
                   <div
