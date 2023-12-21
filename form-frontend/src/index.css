@@ -31,8 +31,7 @@ input:checked.defaultCheckbox::before {
 
 
 .timeContainer {
-    position: absolute;
-	top: 60px;
+    
 	z-index: 10;
 	display: flex;
 	/* border: 1px solid red; */

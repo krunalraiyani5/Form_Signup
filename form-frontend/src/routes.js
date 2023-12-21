@@ -1,6 +1,8 @@
 import React from "react";
 
 // Admin Imports
+
+
 import MainDashboard from "./views/admin/default";
 import NFTMarketplace from "./views/admin/marketplace";
 import Profile from "./views/admin/profile";
@@ -22,6 +24,8 @@ import {
   MdAssignmentTurnedIn,
   MdAssignment,
 } from "react-icons/md";
+
+let name = localStorage.getItem("name");
 
 const routes = [
   {
@@ -49,14 +53,14 @@ const routes = [
     path: "Certification",
     component: <DataTables />,
   },
-  // {
-  //   name: "Profile",
-  //   layout: "/admin",
-  //   alterPath: "pos",
-  //   path: "profile",
-  //   icon: <MdPerson className="h-6 w-6" />,
-  //   component: <Profile />,
-  // },
+  {
+    name: name,
+    layout: "/admin",
+    alterPath: "pos",
+    path: "profile",
+    icon: <MdPerson className="h-6 w-6" />,
+    component: <Profile />,
+  },
   // {
   //   name: "Sign In",
   //   layout: "/auth",

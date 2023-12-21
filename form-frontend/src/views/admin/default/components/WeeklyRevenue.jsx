@@ -114,6 +114,7 @@ const WeeklyRevenue = () => {
         const storedElapsedTime = localStorage.getItem('time');
         if(storedElapsedTime){
           Set_Elapsed(storedElapsedTime)
+          // Timer is true
           setIsTimerRunning(true);
         }
         
@@ -166,7 +167,7 @@ const WeeklyRevenue = () => {
     
 
 <>
-<p>Time Completed!</p>
+<p className='m-5'>Time Completed!</p>
 
 </>
 

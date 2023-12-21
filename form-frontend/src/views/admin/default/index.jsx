@@ -8,8 +8,8 @@ const Dashboard = () => {
     <div>
 
 
-      <div className="mt-5 grid grid-cols-1 gap-5 relative ">
-        <WeeklyRevenue />
+      <div className="mt-5 grid grid-cols-1 gap-5 relative md:mt-15 ">
+        {/* <WeeklyRevenue /> */}
         <TotalSpent />
       </div>
 
