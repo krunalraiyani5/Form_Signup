@@ -179,8 +179,8 @@ const Signup2 = () => {
                   <img src={logo} alt="Logo" className="2xl:w-[240] 2xl:h-[70px] w-[180] h-[50px]"/>
                 </div>
                 <form className="bg-white p-10 pb-[25px] sm:p-15  rounded-md shadow-lg shadow-blue-500/50 2xl:w-[30%] 2xl:mt-[150px]  mt-[100px]">
-          <h1 className="text-gray-800 font-bold text-2xl mb-1">Hello</h1>
-          <p className="text-sm font-normal text-gray-600 mb-7">Welcome Join Analah Insurance and begin your PoSP journey!</p>
+          <h1 className="text-gray-800 font-bold text-[20px] mb-5">Join Analah Insurance and begin your PoSP journey!</h1>
+          {/* <p className="text-sm font-normal text-gray-600 mb-7">Welcome Join Analah Insurance and begin your PoSP journey!</p> */}
           <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4"
               style={Name_valid ? validStyle : notValidStyle}>
             <svg
