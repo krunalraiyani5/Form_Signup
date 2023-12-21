@@ -162,12 +162,12 @@ const WeeklyRevenue = () => {
   }, [elapsedTime]);
 
   return (
-    <div>
+    <div >
     {isTimeCompleted ? (
     
 
 <>
-<p className='m-5'>Time Completed!</p>
+<p className='m-5 text-white'>Time Completed!</p>
 
 </>
 

@@ -59,23 +59,23 @@ input:checked.defaultCheckbox::before {
   }
   
   .timeContainer .wrapper div:first-child{
-	color: #00A3D0;
-	background: white;
+	color: #fff;
+	
   }
   
   .timeContainer .wrapper div:nth-child(2){
-	background: #00A3D0;
-	background: white;
+	color: #fff;
+	
   }
   
   .timeContainer .wrapper div:nth-child(3){
-	color: #00A3D0;
-	background: #fff;
+	color: #fff;
+	
   }
   
   .timeContainer .wrapper div:last-child{
-	color: #00A3D0;
-	background: #fff;
+	color: #fff;
+	
   }
   
   .timeContainer .wrapper div h2 {
