@@ -4,7 +4,7 @@ import Logout from "../../assets/Icon/logout_icon.png";
 import { Link } from "react-router-dom";
 
 const Navbar = (props) => {
-  const { onOpenSidenav, brandText } = props;
+  const { onOpenSidenav, brandText, open, onOpen } = props;
   const [darkmode, setDarkmode] = React.useState(false);
   const removeKeyFromLocalStorage = (key) => {
     localStorage.removeItem(key);
@@ -23,7 +23,7 @@ const Navbar = (props) => {
         <div className="h-6 w-[224px] pt-1">
           <a
             className="text-sm font-normal text-navy-700 hover:underline dark:text-white dark:hover:text-white"
-            href=" "
+            onClick={onOpen}
           >
             Pages
             <span className="mx-1 text-sm text-navy-700 hover:text-navy-700 dark:text-white">
@@ -48,8 +48,8 @@ const Navbar = (props) => {
         </p>
       </div>
 
-      <div className="relative mt-[3px] flex h-[61px] w-[105px] flex-grow items-center justify-around gap-1 rounded-full bg-white px-2 py-2 shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none md:w-[165px] md:flex-grow-0 md:gap-1 xl:w-[165px] xl:gap-2">
-        <span>{name}</span>
+      <div className="relative mt-[3px] flex h-[61px] w-[305px] flex-grow items-center justify-around gap-1 rounded-full bg-white px-2 py-2 shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none  md:flex-grow-0 md:gap-1  xl:gap-2">
+        <span >{name}</span>
 
         <Link to="/login">
           <img

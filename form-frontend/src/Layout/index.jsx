@@ -80,6 +80,7 @@ export default function Admin(props) {
               brandText={currentRoute}
               secondary={getActiveNavbar(routes)}
               {...rest}
+              open={open} onOpen={() => setOpen(true)}
             />
             <div className="pt-5s mx-auto mb-auto h-full min-h-[84vh] p-2 md:pr-2">
               <Routes>
