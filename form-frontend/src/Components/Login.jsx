@@ -81,6 +81,13 @@ const Login = () => {
         localStorage.setItem('time', data.remainingTimeInSeconds);
         localStorage.setItem('name', data.name);
         localStorage.setItem("exam", data.exam);
+        localStorage.setItem("date", data.date);
+        if(data.points>20){
+        
+          localStorage.setItem("points", true)
+        }else{
+          localStorage.setItem("points", false)
+        }
         document.getElementById("email").value = "";
         localStorage.setItem('training_completed', false);
 
