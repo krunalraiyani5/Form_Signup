@@ -6,7 +6,7 @@ const SignupSchema = new mongoose.Schema({
     mobile : {type : String, require: true},
     password : {type : String, require: true},
     uniqueID : {type : String, require: true, unique:true},
-    points: {type: String},
+    points: {type: String, default: 0},
     Exam: {type: Boolean, default: false },
     date: {type: String},
 

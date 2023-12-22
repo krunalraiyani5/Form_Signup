@@ -38,6 +38,10 @@ app.post("/login", async (req, res) => {
         console.log(user)
         const remainingTimeInSeconds = user.remainingTime;
         const name = user.name;
+        if(user.exam){
+
+          return res.send({Status : "Ok", msg:"login successful", email: email, remainingTimeInSeconds, name, exam: user.Exam, points: user.points, date:user.date });
+        }
         return res.send({Status : "Ok", msg:"login successful", email: email, remainingTimeInSeconds, name, exam: user.Exam});
       } else {
         return res.send({Status: "Failed", msg: "Wrong Password!!"});
