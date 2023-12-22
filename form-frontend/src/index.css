@@ -121,3 +121,108 @@ a:hover {
     color: #000;
     text-decoration: none;
 }
+
+
+@media only screen and (max-width: 640px) and (min-width: 0px) {
+	.question{
+		font-size: 18px;
+	}
+	.ui.massive.buttons .button{
+		font-size: 18px;
+
+	}
+	
+	.ui[class*="right floated"].button, .ui[class*="right floated"].buttons {
+		float: left;
+		margin-right: 0;
+		margin-left: 0.25em;
+	}
+
+	.ui.items>.item [class*="right floated"] {
+		float: left;
+	}
+
+	.ui.items>.item .extra>[class*="right floated"] {
+		margin: 0;
+	}
+	.ui.huge.message{
+		font-size: 16px;
+	}
+
+	.options{
+		font-size: 16px;
+	}
+
+	.ui.container {
+		width: auto!important;
+		margin-left: 0px!important;
+		margin-right: 0px!important;
+	}
+	
+
+	
+  }
+
+  @media only screen and (max-width: 768px) and (min-width: 640px) {
+	.question{
+		font-size: 18px;
+	}
+	.ui.massive.buttons .button{
+		font-size: 18px;
+
+	}
+	.ui.huge.message{
+		font-size: 16px;
+	}
+	.options{
+		font-size: 16px;
+	}
+  }
+
+  @media only screen and (max-width: 1024px) and (min-width: 768px) {
+	.question{
+		font-size: 18px;
+	}
+	.ui.massive.buttons .button{
+		font-size: 18px;
+
+	}
+	.ui.huge.message{
+		font-size: 16px;
+	}
+	.options{
+		font-size: 16px;
+	}
+  }
+
+  @media only screen and (max-width: 1200px) and (min-width: 1024px) {
+	.question{
+		font-size: 20px;
+	}
+	.ui.massive.buttons .button{
+		font-size: 20px;
+
+	}
+	.ui.huge.message{
+		font-size: 18px;
+	}
+	.options{
+		font-size: 16px;
+	}
+  }
+
+  @media only screen and (max-width: 1536px) and (min-width: 1200px) {
+	.question{
+		font-size: 22px;
+	}
+	.ui.massive.buttons .button{
+		font-size: 22px;
+
+	}
+	.ui.huge.message{
+		font-size: 20px;
+	}
+	.options{
+		font-size: 16px;
+	}
+  }

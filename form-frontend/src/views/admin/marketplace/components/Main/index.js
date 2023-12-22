@@ -19,8 +19,8 @@ const Main = ({ startQuiz }) => {
   const [difficulty, setDifficulty] = useState('easy');
   const [questionsType, setQuestionsType] = useState('0');
   const [countdownTime, setCountdownTime] = useState({
-    hours: 0,
-    minutes: 90,
+    hours: 3600,
+    minutes: 0,
     seconds: 0,
   });
   const [processing, setProcessing] = useState(false);
@@ -138,12 +138,6 @@ console.log(countdownTime&& true)
                   content={processing ? 'Processing...' : 'Start Now'}
                   onClick={fetchData}
                   disabled={!allFieldsSelected || processing}
-                  // style={{
-                  //   position: "relative",
-                  //   top: "80%",
-                  //   left: "50%",
-                  //   transform: "translate(-50%, -50%)"
-                  // }}
                 />
       
     </div>

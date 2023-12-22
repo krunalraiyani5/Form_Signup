@@ -11,21 +11,20 @@ import Pppt from "../../../../assets/Docs/POSP_Training.pdf";
 const TotalSpent = () => {
 
   const docs = [
-
-    { uri: Pppt }, // Local File
+    { uri: Pppt },
   ];
   return (
     <Card extra="!p-[20px] text-center overflow-y-hidden  ">
 
-      
 
-      <div className="flex  flex-row justify-center sm:flex-wrap lg:flex-nowrap overflow-y-hidden border-2  2xl:w-[80%] xl:w-[70%] w-[90%] h-[80%] fixed ">
-        
 
-<DocViewer 
-           documents={docs} 
+      <div className="flex  flex-row justify-center sm:flex-wrap lg:flex-nowrap overflow-y-hidden border-2  2xl:w-[80%] xl:w-[70%] w-[90%]  fixed ">
 
-           config={{
+
+        <DocViewer
+          documents={docs}
+
+          config={{
             header: {
               disableHeader: false,
               disableFileName: true,
@@ -34,23 +33,23 @@ const TotalSpent = () => {
             csvDelimiter: ",", // "," as default,
             pdfZoom: {
               defaultZoom: 1.1, // 1 as default,
-          
+
             },
             pdfVerticalScrollByDefault: false, // false as default
           }}
-           
-           
-           pluginRenderers={DocViewerRenderers} 
-           
 
-           
-           
-           />
 
-          
+          pluginRenderers={DocViewerRenderers}
 
-          
-      
+
+
+
+        />
+
+
+
+
+
 
       </div>
     </Card>

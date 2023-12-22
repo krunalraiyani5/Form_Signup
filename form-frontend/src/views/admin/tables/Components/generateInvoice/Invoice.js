@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     logo: {
-        width: 180,
+        width: 220,
         height: 60,
         marginLeft: 'auto',
         marginRight: 'auto',

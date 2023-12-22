@@ -14,6 +14,7 @@ import {
 import he from 'he';
 
 import Countdown from '../Countdown';
+
 import { getLetter } from '../../utils';
 import axios from 'axios';
 
@@ -174,7 +175,7 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
                 <Item.Extra>
                   <Header as="h1" block floated="left">
                     <Icon name="info circle" />
-                    <Header.Content>
+                    <Header.Content className='question'>
                       {`Question No.${questionIndex + 1} of ${data.length}`}
                     </Header.Content>
                   </Header>
@@ -201,6 +202,7 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
                       name={"a"}
                       active={userSlectedAns === "a"}
                       onClick={handleItemClick}
+                      className='options'
                     // style={userSlectedAns === data[questionIndex].Options["a"] ? {backgroundColor: "#9dbef5"}: {}}
 
                     >
@@ -213,6 +215,7 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
                       name={"b"}
                       active={userSlectedAns === "b"}
                       onClick={handleItemClick}
+                      className='options'
                     >
                       <b>B.</b>
                       &nbsp; {data[questionIndex].Options["b"]}
@@ -223,6 +226,7 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
                       name={"c"}
                       active={userSlectedAns === "c"}
                       onClick={handleItemClick}
+                      className='options'
                     >
                       <b>C.</b>
                       &nbsp; {data[questionIndex].Options["c"]}
@@ -232,6 +236,7 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
                       name={"d"}
                       active={userSlectedAns === "d"}
                       onClick={handleItemClick}
+                      className='options'
                     >
                       <b>D.</b>
                       &nbsp; {data[questionIndex].Options["d"]}
