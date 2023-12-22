@@ -18,7 +18,7 @@ const WeeklyRevenue = () => {
   const tim = localStorage.getItem('time')
   console.log(tim, "timer get")
   const [startTime, setStartTime] = useState(Date.now() - initialElapsedTime);
-  const {Set_Exam} = useContext(Timer_Context);
+  const { Set_Exam } = useContext(Timer_Context);
   const navigate = useNavigate()
   const [elapsedTime, Set_Elapsed] = useState(tim);
   // console.log(elapsedTime)
@@ -66,19 +66,19 @@ const WeeklyRevenue = () => {
 
 
   useEffect(() => {
-    const handleBeforeUnload = async(event) => {
-     
-      localStorage.setItem('time', elapsedTime );
+    const handleBeforeUnload = async (event) => {
+
+      localStorage.setItem('time', elapsedTime);
       try {
         // Replace 'your_backend_endpoint' with the actual endpoint
-           
-          const response = await axios.post('https://pos-registration.onrender.com/timer', { email: email_user, remainingTime: elapsedTime, update: true});
-          console.log("Post Request", elapsedTime, response);
 
-        } catch (error) {
-          console.error('Error sending timer data:', error);
-        }
-        setIsTimerRunning(false);
+        const response = await axios.post('https://pos-registration.onrender.com/timer', { email: email_user, remainingTime: elapsedTime, update: true });
+        console.log("Post Request", elapsedTime, response);
+
+      } catch (error) {
+        console.error('Error sending timer data:', error);
+      }
+      setIsTimerRunning(false);
     };
 
     window.addEventListener('beforeunload', handleBeforeUnload);
@@ -94,11 +94,11 @@ const WeeklyRevenue = () => {
       if (document.visibilityState === 'hidden') {
         // Save elapsed time when the user switches tabs or closes the browser
         // localStorage.setItem('elapsedTime', elapsedTime.toString());
-        localStorage.setItem('time', elapsedTime );
-       try {
-        // Replace 'your_backend_endpoint' with the actual endpoint
-           
-          const response = await axios.post('https://pos-registration.onrender.com/timer', { email: email_user, remainingTime: elapsedTime, update: true});
+        localStorage.setItem('time', elapsedTime);
+        try {
+          // Replace 'your_backend_endpoint' with the actual endpoint
+
+          const response = await axios.post('https://pos-registration.onrender.com/timer', { email: email_user, remainingTime: elapsedTime, update: true });
           console.log("Post Request", elapsedTime, response);
 
         } catch (error) {
@@ -109,7 +109,7 @@ const WeeklyRevenue = () => {
         // Restore elapsed time and start the timer again when the user comes back
         // try {
         //   // Replace 'your_backend_endpoint' with the actual endpoint
-             
+
         //     const response = await axios.post('https://pos-registration.onrender.com/timer', { email: email_user, remainingTime: elapsedTime, update:false });
         //     console.log("Post Request", elapsedTime, response.data.timer);
         //     Set_Elapsed(response.data.timer);
@@ -120,16 +120,16 @@ const WeeklyRevenue = () => {
         //   }
 
         const storedElapsedTime = localStorage.getItem('time');
-        if(storedElapsedTime){
+        if (storedElapsedTime) {
           Set_Elapsed(storedElapsedTime)
           // Timer is true
           setIsTimerRunning(true);
         }
-        
+
         // if (storedElapsedTime) {
         //   Set_Elapsed(parseInt(storedElapsedTime, 10));
         //   setStartTime(Date.now() - parseInt(storedElapsedTime, 10));
-          
+
         // }
       }
     };
@@ -149,21 +149,21 @@ const WeeklyRevenue = () => {
   useEffect(() => {
     if (elapsedTime <= 0) {
       Set_Elapsed(0);
-      localStorage.setItem('training_completed', true );
+      localStorage.setItem('training_completed', true);
 
       const timeCompleted = async () => {
-         try {
-             
-            const response = await axios.post('https://pos-registration.onrender.com/timer', { email: email_user, remainingTime: elapsedTime, update: true});
-            console.log("Post Request", elapsedTime, response);
-  
-          } catch (error) {
-            console.error('Error sending timer data:', error);
-          }
-      
-        
+        try {
+
+          const response = await axios.post('https://pos-registration.onrender.com/timer', { email: email_user, remainingTime: elapsedTime, update: true });
+          console.log("Post Request", elapsedTime, response);
+
+        } catch (error) {
+          console.error('Error sending timer data:', error);
+        }
+
+
       };
-      
+
       timeCompleted();
       setIsTimerRunning(false);
       setIsTimeCompleted(true);
@@ -173,59 +173,59 @@ const WeeklyRevenue = () => {
 
   return (
     <div >
-    {isTimeCompleted ? (
-    
-
-<>
-{
-training_completed && exam && points ? <>  
-
- <PDFDownloadLink
-document={<PdfDocument invoicedata={InvoiceData} />}
-fileName={fileName}
-
->
-{({ blob, url, loading, error }) =>
-  loading ? "Loading..." : "Download POSP Certificate"
-}
-{/* <Image style={styles.download} src={download} /> */}
-
-</PDFDownloadLink></> : <p className='m-5 text-white'>Time Completed!</p>
-}
+      {isTimeCompleted ? (
 
 
-</>
+        <>
+          {
+            training_completed && exam && points ? <>
 
-    ) : (
-      <section class="timeContainer">
-<div class="wrapper">
+              <PDFDownloadLink
+                document={<PdfDocument invoicedata={InvoiceData} />}
+                fileName={fileName}
 
-<div class="hours">
-  <h2 id="hours">{Math.floor(elapsedTime / (60 * 60 * 1000))} </h2>
-  <span class="text">
+              >
+                {({ blob, url, loading, error }) =>
+                  loading ? "Loading..." : "Download POSP Certificate"
+                }
+                {/* <Image style={styles.download} src={download} /> */}
 
-  HOURS
-  </span>
-</div>
+              </PDFDownloadLink></> : <p className='m-5 text-white'>Time Completed!</p>
+          }
 
-<div class="minutes">
-  <h2 id="minutes">{Math.floor((elapsedTime % (60 * 60 * 1000)) / (60 * 1000))}</h2>
-  <span class="text">
 
-  MINUTES
-  </span>
-</div>
-<div class="seconds">
-  <h2 id="seconds">{Math.floor((elapsedTime % (60 * 1000)) / 1000)}</h2>
-  <span class="text">
+        </>
 
-  SECONDS
-  </span>
-</div>
-</div>
-</section>
-    )}
-  </div>
+      ) : (
+        <section class="timeContainer">
+          <div class="wrapper">
+
+            <div class="hours">
+              <h2 id="hours">{Math.floor(elapsedTime / (60 * 60 * 1000))} </h2>
+              <span class="text">
+
+                HOURS
+              </span>
+            </div>
+
+            <div class="minutes">
+              <h2 id="minutes">{Math.floor((elapsedTime % (60 * 60 * 1000)) / (60 * 1000))}</h2>
+              <span class="text">
+
+                MINUTES
+              </span>
+            </div>
+            <div class="seconds">
+              <h2 id="seconds">{Math.floor((elapsedTime % (60 * 1000)) / 1000)}</h2>
+              <span class="text">
+
+                SECONDS
+              </span>
+            </div>
+          </div>
+        </section>
+      )}
+    </div>
   );
 };
 

@@ -13,17 +13,12 @@ const TotalSpent = () => {
   const docs = [
     { uri: Pppt },
   ];
+
   return (
     <Card extra="!p-[20px] text-center overflow-y-hidden  ">
-
-
-
       <div className="flex  flex-row justify-center sm:flex-wrap lg:flex-nowrap overflow-y-hidden border-2  2xl:w-[80%] xl:w-[70%] w-[90%]  fixed ">
-
-
-        <DocViewer
+       <DocViewer
           documents={docs}
-
           config={{
             header: {
               disableHeader: false,
@@ -40,18 +35,8 @@ const TotalSpent = () => {
 
 
           pluginRenderers={DocViewerRenderers}
-
-
-
-
-        />
-
-
-
-
-
-
-      </div>
+          />
+          </div>
     </Card>
   );
 };
