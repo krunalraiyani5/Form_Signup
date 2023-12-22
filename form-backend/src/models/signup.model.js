@@ -9,6 +9,7 @@ const SignupSchema = new mongoose.Schema({
     points: {type: String, default: 0},
     Exam: {type: Boolean, default: false },
     date: {type: String},
+    answers: {type: Array},
 
     remainingTime: {
         type: Number,

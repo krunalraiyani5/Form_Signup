@@ -32,7 +32,7 @@ const currentYear = currentDate.getFullYear();
  const date = `${currentDateOfMonth} - ${currentMonth} - ${currentYear}`;
 
  const updatePoints = await Signup.updateOne({email},  { $set: { points: points, Exam:true, date }})
-              return res.send({Status : "Ok", msg:"Exam Completed", email: email, points, date});
+              return res.send({Status : "Ok", msg:"Exam Completed", email: email, points, date, answers: user_answers});
            
           } else {
             return res.send({Status: "Error", msg: "User Does not Exist"});
