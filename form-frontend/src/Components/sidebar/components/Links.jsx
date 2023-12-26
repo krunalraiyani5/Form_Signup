@@ -32,36 +32,71 @@ export function SidebarLinks(props) {
           <>
 
 
-            {
+            {   route.path === "home" ? (<Link key={index} to={ route.layout + "/" + route.path}>
+                
+                <li className="flex">
+                <span
+                        className={`${activeRoute(route.path) === true
+                            ? "font-bold text-blue"
+                            : "font-medium text-blue"
+                          }`}
+                      >
+                        {route.icon ? route.icon : <DashIcon />}{" "}
+                      </span>
+                      <span
+                        className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
+                            ? "font-bold text-blue"
+                            : "font-medium text-gray-300"
+                          }`}
+                      >
+                        {route.name}
+                      </span>
+                {/* <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Examination</a> */}
+              </li>
+                 </Link>) :
               route.path === "training" ? (<Link key={index} to={route.layout + "/" + route.path}>
-                <div className="relative mb-10 flex hover:cursor-pointer">
-                  <li
-                    className="my-[3px] flex cursor-pointer items-center px-8"
-                    key={index}
-                  >
-                    <span
+                <li className="flex">
+                <span
                       className={`${activeRoute(route.path) === true
-                          ? "font-bold text-white"
-                          : "font-medium text-white"
+                          ? "font-bold text-[]"
+                          : "font-medium text-[#5d5c5d]"
                         }`}
                     >
                       {route.icon ? route.icon : <DashIcon />}{" "}
                     </span>
-                    <p
+                    <span
                       className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
-                          ? "font-bold text-white"
+                          ? "font-bold text-blue"
+                          : "font-medium tex-[#00a465]"
+                        }`}
+                    >
+                      {route.name}
+                    </span>
+             
+            </li>
+             
+              </Link>) : route.path === "Examination" && training_completed & !exam? (<Link key={index} to={route.layout + "/" + route.path}>
+              
+              <li className="flex">
+              <span
+                      className={`${activeRoute(route.path) === true
+                          ? "font-bold text-blue"
+                          : "font-medium text-blue"
+                        }`}
+                    >
+                      {route.icon ? route.icon : <DashIcon />}{" "}
+                    </span>
+                    <span
+                      className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
+                          ? "font-bold text-blue"
                           : "font-medium text-gray-300"
                         }`}
                     >
                       {route.name}
-                    </p>
-                  </li>
-                  {activeRoute(route.path) ? (
-                    <div class="absolute right-0 top-px h-9 w-1 rounded-lg bg-brand-500 dark:bg-brand-400" />
-                  ) : null}
-                </div>
-              </Link>) : route.path === "Examination" && training_completed & !exam? (<Link key={index} to={route.layout + "/" + route.path}>
-                <div className="relative mb-10 flex hover:cursor-pointer">
+                    </span>
+              {/* <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Training</a> */}
+            </li>
+                {/* <div className="relative mb-10 flex hover:cursor-pointer">
                   <li
                     className="my-[3px] flex cursor-pointer items-center px-8"
                     key={index}
@@ -86,9 +121,31 @@ export function SidebarLinks(props) {
                   {activeRoute(route.path) ? (
                     <div class="absolute right-0 top-px h-9 w-1 rounded-lg bg-brand-500 dark:bg-brand-400" />
                   ) : null}
-                </div>
+                </div> */}
+
+
               </Link>) : route.path === "Certification" && training_completed && exam && points ? (<Link key={index} to={route.layout + "/" + route.path}>
-                <div className="relative mb-10 flex hover:cursor-pointer">
+                
+              <li className="flex">
+              <span
+                      className={`${activeRoute(route.path) === true
+                          ? "font-bold text-blue"
+                          : "font-medium text-blue"
+                        }`}
+                    >
+                      {route.icon ? route.icon : <DashIcon />}{" "}
+                    </span>
+                    <span
+                      className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
+                          ? "font-bold text-blue"
+                          : "font-medium text-gray-300"
+                        }`}
+                    >
+                      {route.name}
+                    </span>
+              {/* <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Examination</a> */}
+            </li>
+                {/* <div className="relative mb-10 flex hover:cursor-pointer">
                   <li
                     className="my-[3px] flex cursor-pointer items-center px-8"
                     key={index}
@@ -113,10 +170,30 @@ export function SidebarLinks(props) {
                   {activeRoute(route.path) ? (
                     <div class="absolute right-0 top-px h-9 w-1 rounded-lg bg-brand-500 dark:bg-brand-400" />
                   ) : null}
-                </div>
+                </div> */}
 
               </Link>) : route.path === "profile" ? (<Link key={index} to={"/login"} >
-                <div className="relative mb-10 flex hover:cursor-pointer">
+                
+              <li className="flex">
+              <span
+                      className={`${activeRoute(route.path) === true
+                          ? "font-bold text-blue"
+                          : "font-medium text-blue"
+                        }`}
+                    >
+                      {route.icon ? route.icon : <DashIcon />}{" "}
+                    </span>
+                    <span
+                      className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
+                          ? "font-bold text-blue"
+                          : "font-medium text-gray-300"
+                        }`}
+                    >
+                      {route.name}
+                    </span>
+              {/* <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Examination</a> */}
+            </li>
+                {/* <div className="relative mb-10 flex hover:cursor-pointer">
                   <li
                     className="my-[3px] flex cursor-pointer items-center px-8"
                     key={index}
@@ -141,34 +218,76 @@ export function SidebarLinks(props) {
                   {activeRoute(route.path) ? (
                     <div class="absolute right-0 top-px h-9 w-1 rounded-lg bg-brand-500 dark:bg-brand-400" />
                   ) : null}
-                </div>
+                </div> */}
 
-              </Link>) : <div className="relative mb-10 flex hover:cursor-pointer">
-                <li
-                  className="my-[3px] flex cursor-pointer items-center px-8"
-                  key={index}
-                >
-                  <span
-                    className={`${activeRoute(route.path) === true
-                      ? "font-bold text-white"
-                          : "font-medium text-white"
-                      }`}
-                  >
-                    {route.icon ? route.icon : <DashIcon />}{" "}
-                  </span>
-                  <p
-                    className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
-                      ? "font-bold text-white"
-                      : "font-medium text-gray-300"
-                      }`}
-                  >
-                    {route.name}
-                  </p>
-                </li>
-                {activeRoute(route.path) ? (
-                  <div class="absolute right-0 top-px h-9 w-1 rounded-lg bg-brand-500 dark:bg-brand-400" />
-                ) : null}
-              </div>
+              </Link>)  : route.path === "kyc_verification" ? (<Link key={index} to={"/kyc_verification"} >
+                
+                <li className="flex">
+                <span
+                        className={`${activeRoute(route.path) === true
+                            ? "font-bold text-blue"
+                            : "font-medium text-blue"
+                          }`}
+                      >
+                        {route.icon ? route.icon : <DashIcon />}{" "}
+                      </span>
+                      <span
+                        className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
+                            ? "font-bold text-blue"
+                            : "font-medium text-gray-300"
+                          }`}
+                      >
+                        {route.name}
+                      </span>
+                {/* <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Examination</a> */}
+              </li>
+                 </Link>) :
+             
+                <li className="flex">
+                   <span
+                      className={`${activeRoute(route.path) === true
+                          ? "font-bold text-blue"
+                          : "font-medium text-blue"
+                        }`}
+                    >
+                      {route.icon ? route.icon : <DashIcon />}{" "}
+                    </span>
+                    <span
+                      className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
+                          ? "font-bold text-blue"
+                          : "font-medium text-gray-300"
+                        }`}
+                    >
+                      {route.name}
+                    </span>
+                {/* <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Examination</a> */}
+              </li>
+              // <div className="relative mb-10 flex hover:cursor-pointer">
+              //   <li
+              //     className="my-[3px] flex cursor-pointer items-center px-8"
+              //     key={index}
+              //   >
+              //     <span
+              //       className={`${activeRoute(route.path) === true
+              //         ? "font-bold text-white"
+              //             : "font-medium text-white"
+              //         }`}
+              //     >
+              //       {route.icon ? route.icon : <DashIcon />}{" "}
+              //     </span>
+              //     <p
+              //       className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
+              //         ? "font-bold text-white"
+              //         : "font-medium text-gray-300"
+              //         }`}
+              //     >
+              //       {route.name}
+              //     </p>
+              //   </li>
+              //   {activeRoute(route.path) ? (
+              //     <div class="absolute right-0 top-px h-9 w-1 rounded-lg bg-brand-500 dark:bg-brand-400" />
+              //   ) : null}
+              // </div>
             }
           </>
 

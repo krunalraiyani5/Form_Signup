@@ -7,6 +7,8 @@ import MainDashboard from "./views/admin/default";
 import NFTMarketplace from "./views/admin/marketplace";
 import Profile from "./views/admin/profile";
 import DataTables from "./views/admin/tables";
+import Home from "./views/admin/home";
+import KYC from "./views/admin/kyc"
 
 
 // Auth Imports
@@ -30,11 +32,19 @@ let name = localStorage.getItem("name");
 
 const routes = [
   {
+    name: "Home",
+    layout: "/admin",
+    alterPath: "/pos",
+    path: "home",
+    icon: <MdHome className="h-6 w-6" />,
+    component: <Home />,
+  },
+  {
     name: "Training",
     layout: "/admin",
     alterPath: "/pos",
     path: "training",
-    icon: <MdImportContacts className="h-6 w-6" />,
+    icon: <MdModelTraining className="h-6 w-6" />,
     component: <MainDashboard />,
   },
   {
@@ -44,6 +54,15 @@ const routes = [
     alterPath: "/pos",
     icon: <MdAssignment className="h-6 w-6" />,
     component: <NFTMarketplace />,
+    secondary: true,
+  },
+  {
+    name: "KYC",
+    layout: "/admin",
+    path: "kyc_verification",
+    alterPath: "/pos",
+    icon: <MdPerson className="h-6 w-6" />,
+    component: <KYC />,
     secondary: true,
   },
   {

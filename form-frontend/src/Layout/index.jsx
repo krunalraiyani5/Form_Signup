@@ -1,9 +1,10 @@
 import React from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-import Navbar from "../Components/navbar";
+// import Navbar from "../Components/navbar";
 import Sidebar from "../Components/sidebar";
 import Footer from "../Components/footer/Footer";
 import routes from "../routes";
+import Navbar from "../Components/Navbar1";
 
 export default function Admin(props) {
   const { ...rest } = props;
@@ -65,15 +66,19 @@ export default function Admin(props) {
   document.documentElement.dir = "ltr";
   return (
     <div className="flex h-full w-full">
-      <Sidebar open={open} onClose={() => setOpen(false)} />
+      {/* <Sidebar open={open} onClose={() => setOpen(false)} /> */}
       {/* Navbar & Main Content */}
-      <div className="h-full w-full bg-red ">
-        {/* Main Content */}
+
+     
+
+      
+       <div className="h-full w-full ">
+      
         <main
-          className={`mx-[12px] h-full flex-none transition-all md:pr-2 xl:ml-[313px]`}
+          className={` h-full flex-none transition-all`}
         >
-          {/* Routes */}
-          <div className="h-full">
+
+          <div className="h-full ">
             <Navbar
               onOpenSidenav={() => setOpen(true)}
               logoText={"Analah Insurance "}
@@ -97,7 +102,7 @@ export default function Admin(props) {
             </div>
           </div>
         </main>
-      </div>
+      </div> 
     </div>
   );
 }
