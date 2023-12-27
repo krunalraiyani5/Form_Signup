@@ -59,7 +59,7 @@ export function SidebarLinks(props) {
                 <span
                       className={`${activeRoute(route.path) === true
                           ? "font-bold text-blue"
-                          : "font-medium text-[#5d5c5d]"
+                          : "font-medium text-blue"
                         }`}
                     >
                       {route.icon ? route.icon : <DashIcon />}{" "}
@@ -67,7 +67,7 @@ export function SidebarLinks(props) {
                     <span
                       className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
                           ? "font-bold text-blue"
-                          : "font-medium tex-[#00a465]"
+                          : "font-medium tex-blue"
                         }`}
                     >
                       {route.name}
@@ -89,7 +89,7 @@ export function SidebarLinks(props) {
                     <span
                       className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
                           ? "font-bold text-blue"
-                          : "font-medium text-gray-300"
+                          : "font-medium text-blue"
                         }`}
                     >
                       {route.name}
@@ -113,7 +113,7 @@ export function SidebarLinks(props) {
                     <span
                       className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
                           ? "font-bold text-blue"
-                          : "font-medium text-gray-300"
+                          : "font-medium text-blue"
                         }`}
                     >
                       {route.name}
@@ -136,7 +136,7 @@ export function SidebarLinks(props) {
                     <span
                       className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
                           ? "font-bold text-blue"
-                          : "font-medium text-gray-300"
+                          : "font-medium text-blue"
                         }`}
                     >
                       {route.name}
