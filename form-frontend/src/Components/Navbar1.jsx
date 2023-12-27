@@ -9,7 +9,7 @@ const Navbar = () => {
 
 
 
-    <nav class="bg-white border-gray-200 dark:bg-gray-900 border-b-2 border-gray-500 shadow-md">
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 border-gray-500 shadow-md">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 
           <img src={AI_logo} class="h-8" alt="Flowbite Logo" />

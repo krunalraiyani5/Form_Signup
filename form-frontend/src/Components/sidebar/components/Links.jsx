@@ -3,7 +3,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import DashIcon from "../../icons/DashIcon";
-// chakra imports
+
 
 import { useContext } from 'react';
 import { Timer_Context } from '../../../Context/Timer_context';
@@ -38,7 +38,7 @@ export function SidebarLinks(props) {
                 <span
                         className={`${activeRoute(route.path) === true
                             ? "font-bold text-blue"
-                            : "font-medium text-blue"
+                            : "font-medium text-[#5d5c5d]"
                           }`}
                       >
                         {route.icon ? route.icon : <DashIcon />}{" "}
@@ -51,14 +51,14 @@ export function SidebarLinks(props) {
                       >
                         {route.name}
                       </span>
-                {/* <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Examination</a> */}
+              
               </li>
                  </Link>) :
               route.path === "training" ? (<Link key={index} to={route.layout + "/" + route.path}>
                 <li className="flex">
                 <span
                       className={`${activeRoute(route.path) === true
-                          ? "font-bold text-[]"
+                          ? "font-bold text-blue"
                           : "font-medium text-[#5d5c5d]"
                         }`}
                     >
@@ -94,34 +94,9 @@ export function SidebarLinks(props) {
                     >
                       {route.name}
                     </span>
-              {/* <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Training</a> */}
+            
             </li>
-                {/* <div className="relative mb-10 flex hover:cursor-pointer">
-                  <li
-                    className="my-[3px] flex cursor-pointer items-center px-8"
-                    key={index}
-                  >
-                    <span
-                      className={`${activeRoute(route.path) === true
-                        ? "font-bold text-white"
-                        : "font-medium text-white"
-                        }`}
-                    >
-                      {route.icon ? route.icon : <DashIcon />}{" "}
-                    </span>
-                    <p
-                      className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
-                        ? "font-bold text-white"
-                        : "font-medium text-gray-300"
-                        }`}
-                    >
-                      {route.name}
-                    </p>
-                  </li>
-                  {activeRoute(route.path) ? (
-                    <div class="absolute right-0 top-px h-9 w-1 rounded-lg bg-brand-500 dark:bg-brand-400" />
-                  ) : null}
-                </div> */}
+                
 
 
               </Link>) : route.path === "Certification" && training_completed && exam && points ? (<Link key={index} to={route.layout + "/" + route.path}>
@@ -143,34 +118,9 @@ export function SidebarLinks(props) {
                     >
                       {route.name}
                     </span>
-              {/* <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Examination</a> */}
+            
             </li>
-                {/* <div className="relative mb-10 flex hover:cursor-pointer">
-                  <li
-                    className="my-[3px] flex cursor-pointer items-center px-8"
-                    key={index}
-                  >
-                    <span
-                      className={`${activeRoute(route.path) === true
-                        ? "font-bold text-white"
-                        : "font-medium text-white"
-                        }`}
-                    >
-                      {route.icon ? route.icon : <DashIcon />}{" "}
-                    </span>
-                    <p
-                      className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
-                        ? "font-bold text-white"
-                        : "font-medium text-gray-300"
-                        }`}
-                    >
-                      {route.name}
-                    </p>
-                  </li>
-                  {activeRoute(route.path) ? (
-                    <div class="absolute right-0 top-px h-9 w-1 rounded-lg bg-brand-500 dark:bg-brand-400" />
-                  ) : null}
-                </div> */}
+             
 
               </Link>) : route.path === "profile" ? (<Link key={index} to={"/login"} >
                 
@@ -191,36 +141,11 @@ export function SidebarLinks(props) {
                     >
                       {route.name}
                     </span>
-              {/* <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Examination</a> */}
+             
             </li>
-                {/* <div className="relative mb-10 flex hover:cursor-pointer">
-                  <li
-                    className="my-[3px] flex cursor-pointer items-center px-8"
-                    key={index}
-                  >
-                    <span
-                      className={`${activeRoute(route.path) === true
-                        ? "font-bold text-white"
-                        : "font-medium text-white"
-                        }`}
-                    >
-                      {route.icon ? route.icon : <DashIcon />}{" "}
-                    </span>
-                    <p
-                      className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
-                        ? "font-bold text-white"
-                          : "font-medium text-gray-300"
-                        }`}
-                    >
-                      {route.name}
-                    </p>
-                  </li>
-                  {activeRoute(route.path) ? (
-                    <div class="absolute right-0 top-px h-9 w-1 rounded-lg bg-brand-500 dark:bg-brand-400" />
-                  ) : null}
-                </div> */}
+                
 
-              </Link>)  : route.path === "kyc_verification" ? (<Link key={index} to={"/kyc_verification"} >
+              </Link>)  : route.path === "kyc_verification" ? (<Link key={index} to={route.layout + "/" + route.path} >
                 
                 <li className="flex">
                 <span
@@ -239,7 +164,8 @@ export function SidebarLinks(props) {
                       >
                         {route.name}
                       </span>
-                {/* <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Examination</a> */}
+                
+              
               </li>
                  </Link>) :
              
@@ -260,34 +186,9 @@ export function SidebarLinks(props) {
                     >
                       {route.name}
                     </span>
-                {/* <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Examination</a> */}
+              
               </li>
-              // <div className="relative mb-10 flex hover:cursor-pointer">
-              //   <li
-              //     className="my-[3px] flex cursor-pointer items-center px-8"
-              //     key={index}
-              //   >
-              //     <span
-              //       className={`${activeRoute(route.path) === true
-              //         ? "font-bold text-white"
-              //             : "font-medium text-white"
-              //         }`}
-              //     >
-              //       {route.icon ? route.icon : <DashIcon />}{" "}
-              //     </span>
-              //     <p
-              //       className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
-              //         ? "font-bold text-white"
-              //         : "font-medium text-gray-300"
-              //         }`}
-              //     >
-              //       {route.name}
-              //     </p>
-              //   </li>
-              //   {activeRoute(route.path) ? (
-              //     <div class="absolute right-0 top-px h-9 w-1 rounded-lg bg-brand-500 dark:bg-brand-400" />
-              //   ) : null}
-              // </div>
+             
             }
           </>
 
@@ -295,7 +196,7 @@ export function SidebarLinks(props) {
       }
     });
   };
-  // BRAND
+
   return createLinks(routes);
 }
 
