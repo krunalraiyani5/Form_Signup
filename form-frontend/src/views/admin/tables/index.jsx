@@ -25,7 +25,7 @@ const Tables = () => {
     
    }
   return (
-      <div className='flex justify-center'>
+      <div className='flex justify-center '>
       <div className="m-auto mt-5 grid h-full grid-cols-1 gap-5 md:grid-cols-2 w-[50%]">
       <PDFViewer width={800} height={1000} showToolbar={false} style={styles.pdf}>
         <PdfDocument invoicedata={InvoiceData} />

@@ -78,7 +78,7 @@ export default function Admin(props) {
           className={` h-full flex-none transition-all`}
         >
 
-          <div className="h-full ">
+          <div className="h-full relative ">
             <Navbar
               onOpenSidenav={() => setOpen(true)}
               logoText={"Analah Insurance "}
@@ -87,7 +87,8 @@ export default function Admin(props) {
               {...rest}
               open={open} onOpen={() => setOpen(true)}
             />
-            <div className="pt-5s mx-auto mb-auto h-full min-h-[84vh] p-2 md:pr-2">
+            {/* add  bg_kyc pb-[130px]*/}
+            <div className="mx-auto mb-auto h-full min-h-[84vh] bg_kyc pb-[130px]  pt-[71px]  ">
               <Routes>
                 {getRoutes(routes)}
 
@@ -97,9 +98,9 @@ export default function Admin(props) {
                 />
               </Routes>
             </div>
-            <div className="p-3">
+            {/* <div className="p-3">
               <Footer />
-            </div>
+            </div> */}
           </div>
         </main>
       </div> 

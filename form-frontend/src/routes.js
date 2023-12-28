@@ -30,6 +30,8 @@ import {
 
 let name = localStorage.getItem("name");
 
+
+
 const routes = [
   {
     name: "Home",

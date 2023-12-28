@@ -212,12 +212,21 @@ a:hover {
 
 .businessUpdateWrapper {
 	/* background-image: url("./assets/Icon/background.png"); */
-  background: url("./assets/Icon/Home_bg.webp")
+  background: url("./assets/Icon/Home_bg6.png")
     no-repeat,
     rgb(250, 250, 250);
+  padding: 15px 0px 8px;
+  background-size: cover; 
+
+}
+
+.businessUpdateWrapper1 {
+	
   padding: 15px 0px 64px;
 
 }
+
+
 
 @media (min-width: 768px){
 	.fkjiCM {
@@ -234,7 +243,7 @@ a:hover {
 } */
 
 .fkjiCM .business_update {
-	font-family: 'Roboto', sans-serif;
+	font-family: unset;
     font-style: normal;
     font-weight: 700;
     font-size: 37px;
@@ -246,22 +255,25 @@ a:hover {
     max-width: 1200px;
     color: rgb(0, 0, 0);
     margin: 60px auto 30px;
+    margin-left: 40px;
 }
 
 .ekulFW {
     
 	font-family: 'Roboto', sans-serif;
     font-style: normal;
-    width: 598px;
+    width: 100%;
     left: 112px;
     top: 206px;
     background: linear-gradient(259.24deg, rgb(241, 226, 204) -10.54%, rgb(251, 236, 237) 97.86%);
+    background: linear-gradient(259.24deg, rgb(126 190 234) -10.54%, rgb(217 233 242) 97.86%);
+
     border-radius: 12px;
 }
 
 .ekulFW .titleValue {
     font-weight: 700;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 50px;
     display: flex;
     -webkit-box-align: center;
@@ -289,7 +301,7 @@ a:hover {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    max-height: 104px;
+    max-width: 84%;
 }
 
 .ekulFW .renewals_redirection {
@@ -322,9 +334,11 @@ a:hover {
 }
 
 .ekulFW .right_section {
-    width: 30%;
-    padding: 75px 0px 0px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
+
 
 
  .goalsWrapper {
@@ -332,18 +346,19 @@ a:hover {
     flex-direction: column;
     -webkit-box-align: center;
     align-items: center;
-    padding: 80px 40px 80px;
+    /* padding: 80px 40px 80px; */
     gap: 36px;
-	
+	  padding-top: 30px;
 }
 
  .homeHeading {
     width: 908px;
     color: rgb(0, 0, 0);
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 50px;
     text-align: center;
+    
 }
 
  .goalsContent {
@@ -351,12 +366,12 @@ a:hover {
     gap: 23px;
 }
 .cNBNFI.active {
-    background: url('./assets//Icon/InactiveGoalsBg.webp') center center / cover;
+    background: url('./assets//Icon/ActiveGoals2.png') center center / cover;
 }
 
 .cNBNFI {
     display: flex;
-    background: url('./assets//Icon/InactiveGoalsBg.webp') center center / cover;
+    background: url('./assets//Icon/ActiveGoals2.png') center center / cover;
     padding: 20px 32px;
     width: 390px;
     border-radius: 12px;
@@ -422,13 +437,15 @@ a:hover {
 }
 
 .cNBNFI .goalDescriptionWrapper .actionWrapper .ctaButton {
-    color: rgb(255, 255, 255);
+    color: #000;
+
     font-size: 15px;
     font-weight: 700;
     padding: 10px 16px;
     margin-top: 14px;
     border-radius: 24px;
-    background: rgb(18, 22, 23);
+    background: #ffffffb3;
+
     cursor: pointer;
     line-height: 17.58px;
 }
@@ -441,7 +458,7 @@ a:hover {
 
 .cNBNFI {
     display: flex;
-    background: url('./assets/Icon/InactiveGoalsBg.webp') center center / cover;
+    background: url('./assets/Icon/InactiveGoals2.png') center center / cover;
     padding: 20px 32px;
     width: 390px;
     border-radius: 12px;
@@ -469,7 +486,12 @@ a:hover {
 }
 
 .cNBNFI .goalDescriptionWrapper .title.inactiveTitle {
-    color: rgb(108, 115, 117);
+    color: #000;
+    
+}
+.cNBNFI .goalDescriptionWrapper .title.activeTitle {
+  color: #fff;
+  
 }
 
 .cNBNFI .goalDescriptionWrapper .title {
@@ -499,8 +521,14 @@ a:hover {
 }
 
 .cNBNFI .goalDescriptionWrapper .description.inactiveDescription {
-    color: rgb(88, 99, 102);
+    color: #000;
+   
 }
+.cNBNFI .goalDescriptionWrapper .description.activeDescription {
+  color: #fff;
+ 
+}
+
 .cNBNFI .goalDescriptionWrapper .actionWrapper {
     display: flex;
     align-items: flex-start;
@@ -526,9 +554,21 @@ a:hover {
     align-items: center;
 }
 
-.cNBNFI .iconWrapper > img {
+/* .cNBNFI .iconWrapper > img {
     width: 108px;
     height: 108px;
+} */
+.certi_image{
+  width: 88px;
+    height: 108px;
+}
+.kyc_image{
+  width: 108px;
+  height: 100px;
+}
+.sell_image{
+  width: 108px;
+  height: 108px;
 }
 
 
@@ -730,6 +770,46 @@ a:hover {
 .hkRHto .sectionDetailsWrapper .ctaWrapper > svg > circle {
     fill: rgb(171, 37, 108);
     stroke: rgb(239, 201, 220);
+}
+
+
+/* ------- Navbar Icons Color ---------------- */
+
+.activeNavIcons{
+  
+
+color:#00A465;
+}
+.activeNavIcons_link{
+  padding: 8px 10px;
+  background: aliceblue;
+  border-radius: 6px ;
+}
+
+.inactiveNavIcons_link{
+  padding: 8px 10px;
+  /* background: aliceblue; */
+  border-radius: 6px ;
+}
+
+.inactiveNavIcons{
+ 
+ color: #808080;
+}
+
+.shadow_form{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.form_sidebar{
+  width: 274px;
+  height: 565px;
+  /* background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%); */
+  background-color: #F5F5F5;
+}
+
+.bg_kyc{
+  background-image: linear-gradient(to right, rgba(250,252,254,1), rgba(217,237,237,1))
 }
 
 

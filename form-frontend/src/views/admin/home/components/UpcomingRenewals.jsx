@@ -1,5 +1,5 @@
 import React from 'react';
-import Renewals_Img from "../../../../assets/Icon/renewals.webp";
+import Renewals_Img from "../../../../assets/Icon/home_vector.png";
 
 
 const Renewals = () => {
@@ -11,7 +11,7 @@ const Renewals = () => {
           },
       
     }
-    const text = "text-[20px]"
+    const text = "text-[18px]"
 
     return (
 
@@ -19,8 +19,8 @@ const Renewals = () => {
 
             <div class="businessUpdateWrapper ">
                 <section class="style__BusinessUpdateWrapper-sc-105ddp1-0 fkjiCM">
-                    <div class="business_update text-[37px]">Business Update</div>
-                    <div class="businessUpdateWrapper">
+                    <div class="business_update text-[37px]"></div>
+                    <div class="businessUpdateWrapper1">
                         <section class="style__UpcomingRenewalsWrapper-sc-1ema8a4-0 ekulFW">
                             <div class="upcomingRenewals">
                                 <div class="left_section">
@@ -35,7 +35,7 @@ const Renewals = () => {
                                     </div>
                                 </div>
                                 <div class="right_section">
-                                    <img src={Renewals_Img} width="100%" alt="" height="196px" />
+                                    <img src={Renewals_Img} width="70%" alt="" height="196px" />
                                     </div>
                                     </div>
                                     </section>

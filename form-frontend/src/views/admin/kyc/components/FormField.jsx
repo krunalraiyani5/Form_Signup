@@ -34,7 +34,7 @@ const FormField = ({
         <input
           onChange={onChangeYourInfo}
           name={name}
-          className={`font-medium w-full mt-1 p-2 pl-3 rounded-full rounded-lg border ${redBorder} text-[#02295a] text-[15px] hover:border-[#02295a] focus:border-white focus:ring-[#bfe2fd]`}
+          className={`font-medium w-full mt-1 p-2 pl-3 rounded-full rounded-lg border ${redBorder} text-[#02295a] text-[15px] hover:border-[#02295a] focus:border-white focus:ring-[#bfe2fd] w-[50%] p-[14px] mt-[10px]`}
           type="text"
           placeholder={placeholder}
           value={value}

@@ -3,7 +3,7 @@ import ImageUploader from './components/Check_Image_Tag';
 import Form from "./components/Form";
 const index = () => {
   return (
-<Form />
+<Form  />
   )
 }
 

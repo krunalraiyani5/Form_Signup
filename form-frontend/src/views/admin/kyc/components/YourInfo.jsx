@@ -19,13 +19,24 @@ const YourInfo = ({ yourInfo, onChangeYourInfo, isEmpty }) => {
     
   ]);
 
+  const styles = {
+    header: {
+      background: "aliceblue",
+    padding: "12px",
+    borderRadius: "5px"
+}
+    }
+  
+
 
   return (
-    <div>
+    <div >
       <SectionHeading
-        title="PAN Card"
+      style={styles.header}
+       title="PAN Card"
         desc="Submitting your PAN card is necessary for carrying out any financial transactions"
       />
+
       <form>
         <div className="flex flex-col space-y-6 text-[14px]">
           {formFields.map((formField) => (
@@ -43,6 +54,7 @@ const YourInfo = ({ yourInfo, onChangeYourInfo, isEmpty }) => {
       </form>
     </div>
   );
+
 };
 
 export default YourInfo;

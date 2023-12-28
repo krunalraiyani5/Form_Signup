@@ -18,9 +18,18 @@ export function SidebarLinks(props) {
   const {training} = useContext(Timer_Context);
 
   const activeRoute = (routeName) => {
+    console.log("Checking the Path", location.pathname);
     return location.pathname.includes(routeName);
   };
 
+  const styles = {
+    icons : {
+      color : "#808080"
+    },
+    active_icons : {
+      color : "blue"
+    }
+  }
   const createLinks = (routes) => {
     return routes.map((route, index) => {
       if (
@@ -34,19 +43,28 @@ export function SidebarLinks(props) {
 
             {   route.path === "home" ? (<Link key={index} to={ route.layout + "/" + route.path}>
                 
-                <li className="flex">
+                <li className={`flex ${activeRoute(route.path) === true
+                          ? "activeNavIcons_link"
+                          : " inactiveNavIcons_link"
+                        }`}>
                 <span
-                        className={`${activeRoute(route.path) === true
-                            ? "font-bold text-blue"
-                            : "font-medium text-[#5d5c5d]"
+
+                // style={styles.icons}
+                //  style={ `${activeRoute(route.path) === true
+                //   ? styles.icons
+                //   : styles.active_icons
+                // }`}
+                        className={`${ location.pathname === '/admin/home'
+                            ? "font-bold   activeNavIcons"
+                            : "font-medium inactiveNavIcons"
                           }`}
                       >
                         {route.icon ? route.icon : <DashIcon />}{" "}
                       </span>
                       <span
-                        className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
-                            ? "font-bold text-blue"
-                            : "font-medium text-gray-300"
+                        className={`leading-1 ml-4 flex ${location.pathname === '/admin/home'
+                            ? "font-bold  activeNavIcons"
+                            : "font-medium inactiveNavIcons"
                           }`}
                       >
                         {route.name}
@@ -55,19 +73,22 @@ export function SidebarLinks(props) {
               </li>
                  </Link>) :
               route.path === "training" ? (<Link key={index} to={route.layout + "/" + route.path}>
-                <li className="flex">
+                <li className={`flex ${activeRoute(route.path) === true
+                          ? "activeNavIcons_link"
+                          : " inactiveNavIcons_link"
+                        }`}>
                 <span
                       className={`${activeRoute(route.path) === true
-                          ? "font-bold text-blue"
-                          : "font-medium text-blue"
+                          ? "font-bold text-blue activeNavIcons"
+                          : "font-medium text-blue inactiveNavIcons"
                         }`}
                     >
                       {route.icon ? route.icon : <DashIcon />}{" "}
                     </span>
                     <span
                       className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
-                          ? "font-bold text-blue"
-                          : "font-medium tex-blue"
+                          ? "font-bold text-blue activeNavIcons"
+                          : "font-medium tex-blue inactiveNavIcons"
                         }`}
                     >
                       {route.name}
@@ -77,19 +98,22 @@ export function SidebarLinks(props) {
              
               </Link>) : route.path === "Examination" && training_completed & !exam? (<Link key={index} to={route.layout + "/" + route.path}>
               
-              <li className="flex">
+              <li className={`flex ${activeRoute(route.path) === true
+                          ? "activeNavIcons_link"
+                          : " inactiveNavIcons_link"
+                        }`}>
               <span
                       className={`${activeRoute(route.path) === true
-                          ? "font-bold text-blue"
-                          : "font-medium text-blue"
+                          ? "font-bold  activeNavIcons"
+                          : "font-medium  inactiveNavIcons"
                         }`}
                     >
                       {route.icon ? route.icon : <DashIcon />}{" "}
                     </span>
                     <span
                       className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
-                          ? "font-bold text-blue"
-                          : "font-medium text-blue"
+                          ? "font-bold activeNavIcons "
+                          : "font-medium inactiveNavIcons "
                         }`}
                     >
                       {route.name}
@@ -101,19 +125,22 @@ export function SidebarLinks(props) {
 
               </Link>) : route.path === "Certification" && training_completed && exam && points ? (<Link key={index} to={route.layout + "/" + route.path}>
                 
-              <li className="flex">
+              <li className={`flex ${activeRoute(route.path) === true
+                          ? "activeNavIcons_link"
+                          : " inactiveNavIcons_link"
+                        }`}>
               <span
                       className={`${activeRoute(route.path) === true
-                          ? "font-bold text-blue"
-                          : "font-medium text-blue"
+                          ? "font-bold  activeNavIcons"
+                          : "font-medium inactiveNavIcons"
                         }`}
                     >
                       {route.icon ? route.icon : <DashIcon />}{" "}
                     </span>
                     <span
                       className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
-                          ? "font-bold text-blue"
-                          : "font-medium text-blue"
+                          ? "font-bold activeNavIcons"
+                          : "font-medium inactiveNavIcons"
                         }`}
                     >
                       {route.name}
@@ -124,19 +151,22 @@ export function SidebarLinks(props) {
 
               </Link>) : route.path === "profile" ? (<Link key={index} to={"/login"} >
                 
-              <li className="flex">
+              <li className={`flex ${activeRoute(route.path) === true
+                          ? "activeNavIcons_link"
+                          : " inactiveNavIcons_link"
+                        }`}>
               <span
                       className={`${activeRoute(route.path) === true
-                          ? "font-bold text-blue"
-                          : "font-medium text-blue"
+                          ? "font-bold text-blue activeNavIcons"
+                          : "font-medium text-blue inactiveNavIcons"
                         }`}
                     >
                       {route.icon ? route.icon : <DashIcon />}{" "}
                     </span>
                     <span
                       className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
-                          ? "font-bold text-blue"
-                          : "font-medium text-blue"
+                          ? "font-bold text-blue activeNavIcons"
+                          : "font-medium text-blue inactiveNavIcons"
                         }`}
                     >
                       {route.name}
@@ -147,19 +177,22 @@ export function SidebarLinks(props) {
 
               </Link>)  : route.path === "kyc_verification" ? (<Link key={index} to={route.layout + "/" + route.path} >
                 
-                <li className="flex">
+                <li className={`flex ${activeRoute(route.path) === true
+                          ? "activeNavIcons_link"
+                          : " inactiveNavIcons_link"
+                        }`}>
                 <span
                         className={`${activeRoute(route.path) === true
-                            ? "font-bold text-blue"
-                            : "font-medium text-blue"
+                            ? "font-bold text-blue activeNavIcons"
+                            : "font-medium text-blue inactiveNavIcons"
                           }`}
                       >
                         {route.icon ? route.icon : <DashIcon />}{" "}
                       </span>
                       <span
                         className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
-                            ? "font-bold text-blue"
-                            : "font-medium text-gray-300"
+                            ? "font-bold text-blue activeNavIcons"
+                            : "font-medium text-gray-300 inactiveNavIcons"
                           }`}
                       >
                         {route.name}
@@ -169,19 +202,22 @@ export function SidebarLinks(props) {
               </li>
                  </Link>) :
              
-                <li className="flex">
+                <li className={`flex ${activeRoute(route.path) === true
+                  ? "activeNavIcons_link"
+                  : " inactiveNavIcons_link"
+                }`}>
                    <span
                       className={`${activeRoute(route.path) === true
-                          ? "font-bold text-blue"
-                          : "font-medium text-blue"
+                          ? "font-bold text-blue activeNavIcons"
+                          : "font-medium text-blue inactiveNavIcons"
                         }`}
                     >
                       {route.icon ? route.icon : <DashIcon />}{" "}
                     </span>
                     <span
                       className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
-                          ? "font-bold text-blue"
-                          : "font-medium text-gray-300"
+                          ? "font-bold text-blue activeNavIcons"
+                          : "font-medium text-gray-300 inactiveNavIcons"
                         }`}
                     >
                       {route.name}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import YourInfo from "./YourInfo";
 import Plan from "./Plan";
-import BackgroundSidebar from "../assets/images/bg-sidebar-desktop.svg";
+import BackgroundSidebar from "../assets/images/sidebar_image8.jpg";
 import BackgroundSidebarMobile from "../assets/images/bg-sidebar-mobile.svg";
 import Step from "./Step";
 import Addons from "./Addons";
@@ -307,19 +307,20 @@ const Form = () => {
   // };
 
   return (
-    <div className="container">
-      <div className="bg-[#d6d9e6] md:bg-white rounded-xl md:p-3 md:flex justify-center w-[100%]">
-        <div className="relative">
-          <img
-            className="hidden md:block"
+    // background-image: linear-gradient(to right, rgba(250,252,254,1), rgba(217,237,237,1));
+    <div className="container pt-[40px] m-auto bg_kyc ">
+      <div className=" rounded-xl md:p-3 md:flex justify-center w-[100%] mt-[50px]">
+        <div className="relative form_sidebar ">
+          {/* <img
+            className="hidden md:block w-[274px] h-[565px]"
             src={BackgroundSidebar}
             alt="sidebar"
-          />
-          <img
+          /> */}
+          {/* <img
             className="block md:hidden w-full"
             src={BackgroundSidebarMobile}
             alt="topbar"
-          />
+          /> */}
 
           <div className="flex justify-center mt-8 absolute inset-0 space-x-10 md:space-x-0 md:block md:mt-0 md:pl-6 md:pt-8 md:space-y-7">
             {steps.map((step) => (
@@ -332,7 +333,8 @@ const Form = () => {
             ))}
           </div>
         </div>
-        <div className="flex flex-col justify-between absolute top-40 w-[450px] md:static mb-40 rounded-2xl mx-8 px-16 pt-10 pb-16 bg-white md:px-0 md:py-5 md:mx-28 md:w-100 md:my-2">
+
+        <div className="flex flex-col justify-between absolute top-40 w-[450px] md:static mb-40 rounded-2xl p-[40px] w-[50%] h-[565px] shadow_form  rounded-tl-none rounded-bl-none rounded-tr-lg rounded-br-lg bg-white ">
           {(displayThankyou && (
             //<div className="flex flex-col justify-between absolute top-40 w-[450px] md:static mb-40 rounded-2xl mx-8 px-16 pt-10 pb-16 bg-white md:px-0 md:py-5 md:mx-28 md:w-100 md:my-2">
             <>
