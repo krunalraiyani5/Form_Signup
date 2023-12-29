@@ -11,17 +11,16 @@ app.post("/", async (req,res) => {
 
     try{
 
-        let data = await Question.find({}, {Correct_Answer : 1})
+        let data = await Question.find({}, {Correct_Answer : 1});
         let user = await Signup.findOne({ email });
         let points = 0;
-
-       
-
         for(let i=0;i<user_answers.length;i++){
             if(user_answers[i] === data[i].Correct_Answer){
                 points++;
             }
         }
+
+        console.log(user_answers);
 
 
         if (user) {
