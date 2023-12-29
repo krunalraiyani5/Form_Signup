@@ -12,6 +12,9 @@ import arcadeLogo from "../assets/images/icon-arcade.svg";
 import advancedLogo from "../assets/images/icon-advanced.svg";
 import proLogo from "../assets/images/icon-pro.svg";
 
+import Login from "../../../../Components/Login";
+import Aadhaar from "./Aadhar";
+
 const Form = () => {
   //------------------------------STATES------------------------------
   const [stepNumber, setStepNumber] = useState(() => 1);
@@ -29,83 +32,18 @@ const Form = () => {
     
   });
 
+  const [aadhaarNo, setAadhaarNo] = useState("");
+
   // ------- Aadhaar details -----
 
-  const [aadhaar, setAadhaar] = useState({
-    name: "",
-    email: "",
-    
-  });
+  
   const [isEmpty, setIsEmpty] = useState(false);
   const [isPlanEmpty, setIsPlanEmpty] = useState(false);
-  const [planDuration, setPlanDuration] = useState("mo");
-  const [planDurationName, setPlanDurationName] = useState("Monthly");
 
-  const [plan, setPlan] = useState({
-    title: "",
-    price: 0,
-    yearly: false,
-  });
 
-  const [planOptions, setPlanOptions] = useState([
-    {
-      id: 1,
-      logo: arcadeLogo,
-      title: "Arcade",
-      price: 9,
-      monthlyPrice: 9,
-      yearlyPrice: 90,
-      selected: false,
-    },
-    {
-      id: 2,
-      logo: advancedLogo,
-      title: "Advanced",
-      price: 12,
-      monthlyPrice: 12,
-      yearlyPrice: 120,
-      selected: false,
-    },
-    {
-      id: 3,
-      logo: proLogo,
-      title: "Pro",
-      price: 15,
-      monthlyPrice: 15,
-      yearlyPrice: 150,
-      selected: false,
-    },
-  ]);
+  
 
-  const [addonOptions, setAddonOptions] = useState([
-    {
-      id: 1,
-      title: "Online service",
-      desc: "Access to multiplayer games",
-      price: 1,
-      monthlyPrice: 1,
-      yearlyPrice: 10,
-      selected: false,
-    },
-    {
-      id: 2,
-      title: "Larger storage",
-      desc: "Extra 1TB of cloud save",
-      price: 2,
-      monthlyPrice: 2,
-      yearlyPrice: 20,
-      selected: false,
-    },
-    {
-      id: 3,
-      title: "Customizable profile",
-      desc: "Custom theme on your profile",
-      price: 2,
-      monthlyPrice: 2,
-      yearlyPrice: 20,
-      selected: false,
-    },
-  ]);
+ 
 
   const [addons, setAddons] = useState([]);
 
@@ -129,31 +67,21 @@ const Form = () => {
       setGoBackVisible("invisible");
     }
 
-    // console.log(steps);
-    // console.log(stepNumber);
-    // console.log(yourInfo);
-    // console.log(plan);
-    //console.log(addons);
-    // console.log(planOptions);
-    // console.log(addonOptions);
-    // console.log(plan);
-    // console.log(isPlanEmpty);
-    // console.log(displayThankyou);
-    // console.log(planDuration);
+
   }, [
     stepNumber,
     yourInfo,
-    plan,
+    
     addons,
-    addonOptions,
-    planOptions,
+ 
+ 
     isPlanEmpty,
     displayThankyou,
   ]);
 
   //------------------------------FUNCTIONS------------------------------
   const nextStep = () => {
-    if (stepNumber == 1) {
+    if (stepNumber == 1 ) {
       if (
         yourInfo.name.length == 0 ||
         yourInfo.email.length == 0 
@@ -166,14 +94,23 @@ const Form = () => {
       }
     }
 
-    if (stepNumber == 2) {
-      if (plan.title.length == 0) {
-        setIsPlanEmpty(true);
+    if (stepNumber == 2 ) {
+      console.log(aadhaarNo , isEmpty);
+      console.log(aadhaarNo.length );
+      if (
+        aadhaarNo.length < 12 
+  
+       
+      ) {
+        
+        setIsEmpty(true);
         return;
       } else {
-        setIsPlanEmpty(false);
+        setIsEmpty(false);
       }
     }
+
+    
 
     setStepNumber((prevStep) => prevStep + 1);
   };
@@ -192,119 +129,15 @@ const Form = () => {
     });
   };
 
-  const selectPlan = (title, price, id) => {
-    setPlanOptions((prevPlanOptions) => {
-      const updatedPlanOptions = prevPlanOptions.map((planOption) => {
-        if (planOption.id == id) {
-          return { ...planOption, selected: true };
-        } else {
-          return { ...planOption, selected: false };
-        }
-      });
-      return updatedPlanOptions;
-    });
-
-    setPlan((prevPlan) => {
-      return { ...prevPlan, title: title, price: price };
-    });
-  };
-  const toggleDuration = () => {
-    if (plan.yearly == false) {
-      setPlan((prevPlan) => {
-        setPlanDuration("yr");
-        setPlanDurationName("Yearly");
-
-        setPlanOptions((prevPlanOptions) => {
-          const updatedPlanOptions = prevPlanOptions.map((planOption) => {
-            return { ...planOption, price: planOption.yearlyPrice };
-          });
-          return updatedPlanOptions;
-        });
-
-        setAddonOptions((prevAddonOptions) => {
-          const updatedAddonOptions = prevAddonOptions.map((addonOption) => {
-            return { ...addonOption, price: addonOption.yearlyPrice };
-          });
-          return updatedAddonOptions;
-        });
-
-        return { ...prevPlan, yearly: true };
-      });
-    } else {
-      setPlan((prevPlan) => {
-        setPlanDuration("mo");
-        setPlanDurationName("Monthly");
-
-        setPlanOptions((prevPlanOptions) => {
-          const updatedPlanOptions = prevPlanOptions.map((planOption) => {
-            return { ...planOption, price: planOption.monthlyPrice };
-          });
-          return updatedPlanOptions;
-        });
-
-        setAddonOptions((prevAddonOptions) => {
-          const updatedAddonOptions = prevAddonOptions.map((addonOption) => {
-            return { ...addonOption, price: addonOption.monthlyPrice };
-          });
-          return updatedAddonOptions;
-        });
-
-        return { ...prevPlan, yearly: false };
-      });
-    }
-
-    // setPlan((prevPlan) => {
-    //   return { ...prevPlan, yearly: !plan.yearly };
-    // });
+  const ChangeAadhaar = (event) => {
+    setAadhaarNo(event.target.value)
   };
 
-  const checkBox = (e) => {
-    const id = parseInt(e.target.getAttribute("data-id"));
-    const title = e.target.getAttribute("data-title-name");
-    const price = parseInt(e.target.getAttribute("data-price"));
-    if (e.target.checked == true) {
-      setAddons((prevAddons) => [
-        ...prevAddons,
-        { id: id, title: title, price: price },
-      ]);
-    } else {
-      setAddons((prevAddons) => {
-        return prevAddons.filter((addon) => addon.id != id);
-      });
-    }
+ 
 
-    setAddonOptions((prevAddons) => {
-      const updatedAddons = prevAddons.map((addon) => {
-        if (addon.id == id) {
-          if (addon.selected == false) {
-            return { ...addon, selected: true };
-          } else {
-            return { ...addon, selected: false };
-          }
-        } else {
-          return addon;
-        }
-      });
-      return updatedAddons;
-    });
-  };
 
-  // const selectAddon = (id) => {
-  //   setAddonOptions((prevAddons) => {
-  //     const updatedAddons = prevAddons.map((addon) => {
-  //       if (addon.id == id) {
-  //         if (addon.selected == false) {
-  //           return { ...addon, selected: true };
-  //         } else {
-  //           return { ...addon, selected: false };
-  //         }
-  //       } else {
-  //         return addon;
-  //       }
-  //     });
-  //     return updatedAddons;
-  //   });
-  // };
+ 
+
 
   return (
     // background-image: linear-gradient(to right, rgba(250,252,254,1), rgba(217,237,237,1));
@@ -354,32 +187,26 @@ const Form = () => {
                   />
                 )) ||
                   (stepNumber === 2 && (
-                    <Plan
-                      onPlanSelect={selectPlan}
-                      onToggleDuration={toggleDuration}
-                      currentStep={stepNumber}
-                      planOptions={planOptions}
-                      isPlanEmpty={isPlanEmpty}
-                      planDuration={planDuration}
-                    />
+                    <Aadhaar
+                    onChangeAadhaar={ChangeAadhaar}
+                    isEmpty={isEmpty}
+                  />
+            
                   )) ||
                   (stepNumber === 3 && (
-                    <Addons
-                      onBoxCheck={checkBox}
-                      currentStep={stepNumber}
-                      addonOptions={addonOptions}
-                      planDuration={planDuration}
-                    />
+                    <Aadhaar
+                    onChangeAadhaar={ChangeAadhaar}
+                    
+                    isEmpty={isEmpty}
+                  />
                   )) ||
                   (stepNumber === 4 && (
-                    <Summary
-                      selectedPlan={plan}
-                      selectedAddons={addons}
-                      currentStep={stepNumber}
-                      planDuration={planDuration}
-                      planDurationName={planDurationName}
-                      onChangeClick={changeClick}
-                    />
+                    <YourInfo
+                    onChangeYourInfo={changeYourInfo}
+                    yourInfo={yourInfo}
+                    currentStep={stepNumber}
+                    isEmpty={isEmpty}
+                  />
                   ))}
               </div>
               <div className="flex justify-between fixed px-16 bottom-0 left-0 w-full bg-white p-5 md:static md:p-0 md:static items-center w-[700px]]">

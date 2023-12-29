@@ -8,6 +8,8 @@ import Login from './Components/Login';
 import PasswordInput from './Components/Password';
 import POS from "./Layout";
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Tables from './views/admin/tables';
+
 
 // import PasswordValidator1 from './Components/Tool_tip';
 // import PasswordValidator2 from './Components/Tool_tip2';
@@ -26,6 +28,7 @@ function App() {
       {/* <Route path="/Pas" element={<PasswordInput />} /> */}
       
       <Route path="admin/*" element={ <PrivateRoute> <POS /> </PrivateRoute> } />
+      <Route path="/pdf" element={ <Tables />} />
 
     </Routes>
     

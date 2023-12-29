@@ -92,15 +92,14 @@ console.log(countdownTime&& true)
               
 
               <Item.Extra>
-              {/* <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com -->  */}
-<section class="">
-  <div class="h-full">
-    {/* <!-- Left column container with background--> */}
-    <div
-      class="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
-      <div
-        class="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
-        <img
+                <section class="">
+                  <div class="h-full">
+               {/* <!-- Left column container with background--> */}
+               <div
+               class="g-6 flex h-full flex-wrap items-center justify-center ">
+                <div
+                class="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
+                  <img
           src={Exam_vector}
           class="w-full"
           alt="Sample image" />
@@ -108,9 +107,9 @@ console.log(countdownTime&& true)
 
       {/* <!-- Right column container --> */}
       <div class="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
-      <div className="exam-intro-container p-5 leading-10 text-[16px]">
-      <h2 className='font-bold  '>Welcome to the Sales Proficiency Exam!</h2>
-      <p className=''>
+      <div className="exam-intro-container p-5 leading-10 text-[16px] text-black">
+      <h2 className='font-bold  text-[22px] mb-[16px] mt-[-10px]'>Welcome to the Sales Proficiency Exam!</h2>
+      <p >
         This exam is designed to evaluate your knowledge and skills as a POSP.
         
         
@@ -130,6 +129,7 @@ console.log(countdownTime&& true)
       <p>
         Best of luck! Let's get started.
       </p>
+      <div className='mt-[5px]'>
       <Button
                   primary
                   size="big"
@@ -139,6 +139,8 @@ console.log(countdownTime&& true)
                   onClick={fetchData}
                   disabled={!allFieldsSelected || processing}
                 />
+      </div>
+    
       
     </div>
      

@@ -16,9 +16,16 @@ const Stats = ({
   const { grade, remarks } = calculateGrade(score);
   const { hours, minutes, seconds } = timeConverter(timeTaken);
 
+  const styles = {
+    header: {
+      background : "aliceblue",
+      fontSize : "25px"
+    }
+  }
+
   return (
     <Segment>
-      <Header as="h1" textAlign="center" block>
+      <Header as="h1" textAlign="center" block style={styles.header} >
         {remarks}
       </Header>
       <Header as="h2" textAlign="center" block>

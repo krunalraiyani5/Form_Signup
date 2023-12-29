@@ -20,9 +20,9 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     logo: {
-        width: 220,
-        height: 60,
-        marginLeft: 'auto',
+        width: '180px',
+        height: '56px',
+        marginLeft: '5px',
         marginRight: 'auto',
     }
 });

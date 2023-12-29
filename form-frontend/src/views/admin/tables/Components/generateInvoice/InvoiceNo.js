@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     invoiceDate: {
         fontSize: 22,
         fontStyle: 'bold',
+        color : '#f8b64c'
     },
    
 });

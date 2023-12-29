@@ -21,18 +21,14 @@ const Result = ({
 
   return (
     <Container>
-      <Menu fluid widths={2}>
+      {/* <Menu fluid widths={2}>
         <Menu.Item
           name="Stats"
           active={activeTab === 'Stats'}
           onClick={handleTabClick}
-        />
-        {/* <Menu.Item
-          name="QNA"
-          active={activeTab === 'QNA'}
-          onClick={handleTabClick}
-        /> */}
-      </Menu>
+        /> 
+        
+      </Menu> */}
       {activeTab === 'Stats' && (
         <Stats
           totalQuestions={totalQuestions}

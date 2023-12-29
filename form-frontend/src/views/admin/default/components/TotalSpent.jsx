@@ -15,9 +15,10 @@ const TotalSpent = () => {
   ];
 
   return (
-    <Card extra="!p-[20px] text-center overflow-y-hidden  ">
-      <div className="flex  flex-row justify-center sm:flex-wrap lg:flex-nowrap overflow-y-hidden border-2  2xl:w-[80%] xl:w-[70%] w-[90%]  fixed ">
-       <DocViewer
+
+<>
+<div className="w-[100%] m-auto h-[auto]">
+<DocViewer
           documents={docs}
           config={{
             header: {
@@ -25,19 +26,46 @@ const TotalSpent = () => {
               disableFileName: true,
               retainURLParams: false,
             },
-            csvDelimiter: ",", // "," as default,
+            csvDelimiter: ",", 
             pdfZoom: {
-              defaultZoom: 1.1, // 1 as default,
+              defaultZoom: 1.1, 
 
             },
-            pdfVerticalScrollByDefault: false, // false as default
+            pdfVerticalScrollByDefault: false, 
           }}
 
 
           pluginRenderers={DocViewerRenderers}
           />
-          </div>
-    </Card>
+</div>
+
+
+</>
+
+
+    // <Card extra="!p-[20px] text-center overflow-y-hidden  ">
+    //   <div className="flex  flex-row justify-center sm:flex-wrap lg:flex-nowrap overflow-y-hidden border-2  2xl:w-[80%] xl:w-[70%] w-[90%]  fixed ">
+    //    <DocViewer
+    //       documents={docs}
+    //       config={{
+    //         header: {
+    //           disableHeader: false,
+    //           disableFileName: true,
+    //           retainURLParams: false,
+    //         },
+    //         csvDelimiter: ",", 
+    //         pdfZoom: {
+    //           defaultZoom: 1.1, 
+
+    //         },
+    //         pdfVerticalScrollByDefault: false, 
+    //       }}
+
+
+    //       pluginRenderers={DocViewerRenderers}
+    //       />
+    //       </div>
+    // </Card>
   );
 };
 
