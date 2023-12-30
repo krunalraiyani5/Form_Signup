@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import upload_icon from "../assets/images/upload_icon.png"
+import upload_icon from "../assets/images/upload_icon.png";
 import AadhaarDrop from "./Aadhar_Drop";
 
-const FormField_Aadhaar = ({onChangeAadhaar,isEmpty}) => {
+
+const Education_form = ({onChangeEducation,isEmpty}) => {
   const [displayRequired, setDisplayRequired] = useState("hidden");
   const [redBorder, setRedBorder] = useState("border-[#d6d9e6]");
-  const [aadhaarNo, setAadhaarNo] = useState("");
-  
-  
+
   const onFileChange = (files) => {
     console.log(files);
 }
@@ -26,23 +25,29 @@ const FormField_Aadhaar = ({onChangeAadhaar,isEmpty}) => {
   return (
     <div>
       <div className="flex justify-between items-center">
-        <label>Aadhaar Card</label>
+        <label>Highest Education Qualification</label>
         <p
           className={`${displayRequired} font-medium text-[14px] text-[#ed3548]`}
         >
-          Enter Valid Aadhaar Format
+          Please select at least one option
         </p>
       </div>
       <div>
-        <input
-          onChange={onChangeAadhaar}
+      <select name="education" id="education" className={`font-medium w-full mt-1 p-2 pl-3 rounded-full rounded-lg border ${redBorder} text-[#02295a] text-[15px] hover:border-[#02295a] focus:border-white focus:ring-[#bfe2fd] w-[50%] p-[14px] mt-[10px]`}   onChange={onChangeEducation}>
+      <option value="10th Pass">10th Pass</option>
+      <option value="12th Pass">12th Pass</option>
+      <option value="Graduate">Graduate</option>
+      <option value="Post Graduate">Post Graduate</option>
+  </select>
+        {/* <input
+          onChange={onChangeEducation}
           name={"aadhaar"}
           className={`font-medium w-full mt-1 p-2 pl-3 rounded-full rounded-lg border ${redBorder} text-[#02295a] text-[15px] hover:border-[#02295a] focus:border-white focus:ring-[#bfe2fd] w-[50%] p-[14px] mt-[10px]`}
           type="text"
           placeholder='Enter Aadhar Card No.'
    
           
-        />
+        /> */}
 
 
 
@@ -52,11 +57,10 @@ const FormField_Aadhaar = ({onChangeAadhaar,isEmpty}) => {
 
       <AadhaarDrop onFileChange={(files) => onFileChange(files)}/>
 
-
         
       </div>
     </div>
   );
 };
 
-export default FormField_Aadhaar;
+export default Education_form;

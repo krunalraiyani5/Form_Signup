@@ -14,6 +14,11 @@ import proLogo from "../assets/images/icon-pro.svg";
 
 import Login from "../../../../Components/Login";
 import Aadhaar from "./Aadhar";
+import Education from "./Education";
+import DragDropFiles from "./Test";
+
+import Test4 from "./test4";
+
 
 const Form = () => {
   //------------------------------STATES------------------------------
@@ -33,6 +38,7 @@ const Form = () => {
   });
 
   const [aadhaarNo, setAadhaarNo] = useState("");
+  const [education, setEducation] = useState("");
 
   // ------- Aadhaar details -----
 
@@ -98,7 +104,23 @@ const Form = () => {
       console.log(aadhaarNo , isEmpty);
       console.log(aadhaarNo.length );
       if (
-        aadhaarNo.length < 12 
+        aadhaarNo.length < 11
+  
+       
+      ) {
+        
+        setIsEmpty(true);
+        return;
+      } else {
+        setIsEmpty(false);
+      }
+    }
+
+    if (stepNumber == 4 ) {
+      console.log(aadhaarNo , isEmpty);
+      console.log(aadhaarNo.length );
+      if (
+        education.length == 0
   
        
       ) {
@@ -133,6 +155,9 @@ const Form = () => {
     setAadhaarNo(event.target.value)
   };
 
+  const ChangeEducation = (event) => {
+    setEducation(event.target.value)
+  };
  
 
 
@@ -194,17 +219,11 @@ const Form = () => {
             
                   )) ||
                   (stepNumber === 3 && (
-                    <Aadhaar
-                    onChangeAadhaar={ChangeAadhaar}
-                    
-                    isEmpty={isEmpty}
-                  />
+                    <Test4 />
                   )) ||
                   (stepNumber === 4 && (
-                    <YourInfo
-                    onChangeYourInfo={changeYourInfo}
-                    yourInfo={yourInfo}
-                    currentStep={stepNumber}
+                    <Education
+                    onChangeEducation={ChangeEducation}
                     isEmpty={isEmpty}
                   />
                   ))}

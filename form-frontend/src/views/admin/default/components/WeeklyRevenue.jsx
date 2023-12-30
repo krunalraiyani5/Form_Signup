@@ -199,7 +199,7 @@ const WeeklyRevenue = () => {
               <div>
               <p className='m-5 text-[#14AE5C] text-[22px] font-bold'>Time Completed!</p>
 
-              <div className='flex justify-center border-b border-solid border-gray-500 items-center'>
+              <div className='flex justify-center border-b border-solid border-white items-center'>
                 <img src={timerCompleted} alt="Time completed" className='w-[70%]' />
               </div>
 

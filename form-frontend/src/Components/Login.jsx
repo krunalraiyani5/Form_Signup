@@ -107,7 +107,7 @@ const Login = () => {
         }, 2000);
         // window.location.href= "/admin/training";
         console.log("success3");
-        navigate("/admin/training");
+        navigate("/admin/home");
         console.log('Success!');
       } else {
         // alert(data.msg)

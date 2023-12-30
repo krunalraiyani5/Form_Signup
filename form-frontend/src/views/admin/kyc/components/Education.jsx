@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import FormField from "./FormField";
 import SectionHeading from "./SectionHeading";
-import FormField_Aadhaar from "./Aadhar_Form";
+// import Education_form from "./Education_form"
+import Education_form from "./Education_form";
 
-const Aadhaar = ({  onChangeAadhaar, isEmpty }) => {
- 
-
-  const styles = {
+const Education = ({  onChangeEducation, isEmpty }) => {
+ const styles = {
     header: {
       background: "aliceblue",
     padding: "12px",
@@ -20,14 +19,14 @@ const Aadhaar = ({  onChangeAadhaar, isEmpty }) => {
     <div >
       <SectionHeading
       style={styles.header}
-       title="Aadhaar Card"
-        desc="Submitting your Aadhaar card is essential for facilitating secure and authorized financial transactions."
+       title="Highest Education Qualification"
+        desc="Providing details of your highest education qualification is crucial for us to better understand your academic background"
       />
 
       <form>
         <div className="flex flex-col space-y-6 text-[14px]">
          
-            <FormField_Aadhaar  onChangeAadhaar={onChangeAadhaar}
+            <Education_form  onChangeEducation={onChangeEducation}
               isEmpty={isEmpty} />
        
 
@@ -39,4 +38,4 @@ const Aadhaar = ({  onChangeAadhaar, isEmpty }) => {
 
 };
 
-export default Aadhaar;
+export default Education;
