@@ -20,13 +20,18 @@ const Tables = () => {
       zIndex: 100
       },
     pdf:{
-      margin: "auto"
-    },
+      margin: "auto",
+      overflow: "hidden",
+      height:'100%',
+      width:"100%",
+      border: 0
+    }
+    
     
    }
   return (
-      <div className='flex justify-center '>
-      <div className="m-auto mt-5 grid h-full grid-cols-1 gap-5 md:grid-cols-2 w-[50%]">
+      <div className='flex justify-center h-[800px] '>
+      <div className="m-auto mt-5 h-[800px] w-[40%] ml-[750px]">
       <PDFViewer width={800} height={1000} showToolbar={false} style={styles.pdf}>
         <PdfDocument invoicedata={InvoiceData} />
       </PDFViewer>

@@ -88,7 +88,7 @@ export default function Admin(props) {
               open={open} onOpen={() => setOpen(true)}
             />
             {/* add  bg_kyc pb-[130px]*/}
-            <div className="mx-auto mb-auto h-full min-h-[84vh] bg_kyc pb-[130px]  pt-[71px]  ">
+            <div className="mx-auto mb-auto h-full min-h-[84vh] bg_kyc pb-[195px]  pt-[71px]  ">
               <Routes>
                 {getRoutes(routes)}
 

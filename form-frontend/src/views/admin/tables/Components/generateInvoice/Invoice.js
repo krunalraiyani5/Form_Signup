@@ -18,6 +18,9 @@ const styles = StyleSheet.create({
         paddingRight: 50,
         lineHeight: 1.5,
         flexDirection: 'column',
+        overflow: "hidden"
+       
+       
     },
     logo: {
         width: '180px',

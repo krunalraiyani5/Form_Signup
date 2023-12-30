@@ -22,8 +22,7 @@ const WeeklyRevenue = () => {
   const { Set_Exam } = useContext(Timer_Context);
   const navigate = useNavigate()
   const [elapsedTime, Set_Elapsed] = useState(tim);
-  // console.log(elapsedTime)
-  // changed the value true to false
+
   const [isTimerRunning, setIsTimerRunning] = useState(true);
   const [isTimeCompleted, setIsTimeCompleted] = useState(false);
 
@@ -35,7 +34,7 @@ const WeeklyRevenue = () => {
   const training_completed = JSON.parse(localStorage.getItem('training_completed'));
   const fileName = "POSP_Certificate.pdf";
 
-  // Update elapsed time every second when the timer is running
+ 
   useEffect(() => {
     let interval;
     // changed this value
@@ -49,31 +48,12 @@ const WeeklyRevenue = () => {
   }, [isTimerRunning]);
 
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       // Perform the API call to fetch data from the backend
-  //       const response = await fetch('your_backend_api_endpoint');
-  //       const result = await response.json();
-
-  //       // Update the state with the fetched data
-  //       setData(result);
-  //     } catch (error) {
-  //       console.error('Error fetching data:', error);
-  //     }
-  //   };
-
-  //   // Fetch data from the backend when the component mounts or when the page is reloaded
-  //   fetchData();
-  // }, []); 
-
-
   useEffect(() => {
     const handleBeforeUnload = async (event) => {
 
       localStorage.setItem('time', elapsedTime);
       try {
-        // Replace 'your_backend_endpoint' with the actual endpoint
+      
 
         const response = await axios.post('https://pos-registration.onrender.com/timer', { email: email_user, remainingTime: elapsedTime, update: true });
         console.log("Post Request", elapsedTime, response);
@@ -91,16 +71,13 @@ const WeeklyRevenue = () => {
     };
   }, []);
 
-  // Handle visibility change (user switches tabs or closes the browser)
+ 
   useEffect(() => {
     const handleVisibilityChange = async () => {
       if (document.visibilityState === 'hidden') {
-        // Save elapsed time when the user switches tabs or closes the browser
-        // localStorage.setItem('elapsedTime', elapsedTime.toString());
+      
         localStorage.setItem('time', elapsedTime);
         try {
-          // Replace 'your_backend_endpoint' with the actual endpoint
-
           const response = await axios.post('https://pos-registration.onrender.com/timer', { email: email_user, remainingTime: elapsedTime, update: true });
           console.log("Post Request", elapsedTime, response);
 
@@ -109,31 +86,15 @@ const WeeklyRevenue = () => {
         }
         setIsTimerRunning(false);
       } else {
-        // Restore elapsed time and start the timer again when the user comes back
-        // try {
-        //   // Replace 'your_backend_endpoint' with the actual endpoint
-
-        //     const response = await axios.post('https://pos-registration.onrender.com/timer', { email: email_user, remainingTime: elapsedTime, update:false });
-        //     console.log("Post Request", elapsedTime, response.data.timer);
-        //     Set_Elapsed(response.data.timer);
-        //     setIsTimerRunning(true);
-        //     // Set_Elapsed(parseInt(storedElapsedTime, 10));
-        //   } catch (error) {
-        //     console.error('Error sending timer data:', error);
-        //   }
+       
 
         const storedElapsedTime = localStorage.getItem('time');
         if (storedElapsedTime) {
           Set_Elapsed(storedElapsedTime)
-          // Timer is true
+
           setIsTimerRunning(true);
         }
 
-        // if (storedElapsedTime) {
-        //   Set_Elapsed(parseInt(storedElapsedTime, 10));
-        //   setStartTime(Date.now() - parseInt(storedElapsedTime, 10));
-
-        // }
       }
     };
 
@@ -183,7 +144,8 @@ const WeeklyRevenue = () => {
           {
             training_completed && exam && points ? <>
 
-              <PDFDownloadLink
+            <div className='text-[#14AE5C]'>
+            <PDFDownloadLink
                 document={<PdfDocument invoicedata={InvoiceData} />}
                 fileName={fileName}
 
@@ -193,7 +155,10 @@ const WeeklyRevenue = () => {
                 }
                 {/* <Image style={styles.download} src={download} /> */}
 
-              </PDFDownloadLink></> :
+              </PDFDownloadLink>
+            </div>
+
+            </> :
               
               <>
               <div>
