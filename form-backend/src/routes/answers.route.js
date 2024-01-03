@@ -7,7 +7,7 @@ const Signup = require("../models/signup.model");
 app.post("/", async (req,res) => {
 
     const {user_answers, email} = req.body;
-    console.log(user_answers);
+   
 
     try{
 
@@ -19,9 +19,6 @@ app.post("/", async (req,res) => {
                 points++;
             }
         }
-
-        console.log(user_answers);
-
 
         if (user) {
             const currentDate = new Date();

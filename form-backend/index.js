@@ -10,6 +10,7 @@ const timerRoute = require("./src/routes/timer.route");
 const questionRoute = require("./src/routes/question.route");
 const answersRoute = require("./src/routes/answers.route");
 // const certiRoute = require("./src/routes/certi.route");
+const kycRoute = require("./src/routes/upload_kyc.route")
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use("/", signupRoute);
 app.use("/timer", timerRoute);
 app.use("/question", questionRoute);
 app.use("/answers", answersRoute);
+app.use("/upload", kycRoute);
 // app.use("/certi", certiRoute);
 
 
