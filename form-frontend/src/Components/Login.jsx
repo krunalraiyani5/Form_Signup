@@ -250,7 +250,7 @@ const Login = () => {
                   </button>
 
                   <div className="flex justify-between text-sm font-normal text-gray-600 mt-[20px]">
-                    <p >
+                    <p className="text-[14px]">
                       Not registered yet?
                     </p>
 

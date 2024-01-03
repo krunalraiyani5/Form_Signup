@@ -7,7 +7,7 @@ import { ImageConfig } from '../config/ImageConfig';
 import uploadImg from '../assets/images/upload_icon.png';
 import { Timer_Context } from '../../../../Context/Timer_context';
 
-const AadhaarDrop = props => {
+const EducationDrop = props => {
 
     const wrapperRef = useRef(null);
     const [widthSet, setWidthSet] = useState("w-[664px] h-[216px]")
@@ -20,7 +20,7 @@ const AadhaarDrop = props => {
 
     const onDrop = () => wrapperRef.current.classList.remove('dragover');
   
-    const {Set_AadharImage} = useContext(Timer_Context)
+    const {Set_Education} = useContext(Timer_Context)
  
 
     const onFileDrop = (e) => {
@@ -28,7 +28,7 @@ const AadhaarDrop = props => {
         
         if (newFile) {
             const updatedList = [ newFile];
-            Set_AadharImage(newFile);
+            Set_Education(newFile);
             setFileList(updatedList);
             props.onFileChange(updatedList);
         }
@@ -82,8 +82,8 @@ const AadhaarDrop = props => {
     );
 }
 
-AadhaarDrop.propTypes = {
+EducationDrop.propTypes = {
     onFileChange: PropTypes.func
 }
 
-export default AadhaarDrop;
+export default EducationDrop;

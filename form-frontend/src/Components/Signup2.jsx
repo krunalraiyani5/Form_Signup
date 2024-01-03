@@ -30,6 +30,7 @@ const Signup2 = () => {
   const [Mob_valid, setMob_valid] = useState(true);
 
   const [Name_valid, setName_valid] = useState(true);
+  const [Pan_valid, setPan_valid] = useState(true);
   const [Pass_valid, setPass_valid] = useState(true);
 
   const handlePasswordChange = (e) => {
@@ -47,6 +48,25 @@ const Signup2 = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mob, setMob] = useState("");
+  const [pan, setPan] = useState("");
+
+  const validPAN = (e) =>{
+    let  panRegex = new RegExp(/^([A-Z]){5}([0-9]){4}([A-Z]){1}?$/);
+    let panNumber = e.target.value.trim().toUpperCase();
+
+    if (panRegex.test(panNumber)) {
+      setPan(panNumber);
+      setPan_valid(true);
+      return "true";
+
+     } else {
+   
+      setPan("");
+      setPan_valid(false);
+      return "false";
+    }
+
+  }
 
   const validMob = (e) => {
     let regex = new RegExp(/(0|91)?[6-9][0-9]{9}/);
@@ -63,10 +83,10 @@ const Signup2 = () => {
     if (regex.test(mobile_number) == true) {
       setMob(e.target.value);
       setMob_valid(true);
-      console.log("mob valid");
+  
       return "true";
     } else {
-      console.log("mob not valid");
+      
       setMob("");
       setMob_valid(false);
       return "false";
@@ -234,12 +254,43 @@ const Signup2 = () => {
               placeholder="Email Address"
             />
           </div>
-          <div
+
+
+{/* ----------------------  PAN Card ----------------------------------  */}
+          {/* <div
+            className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4"
+            style={Email_valid ? validStyle : notValidStyle}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+              />
+            </svg>
+
+            <input
+              onChange={(e) => validPAN(e)}
+              className="pl-2 outline-none border-none w-[100%]"
+              type="text"
+              name="pan"
+              id="pan"
+              placeholder="PAN No."
+            />
+
+          </div> */}
+          
+          {/* <div
             className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4"
             style={Mob_valid ? validStyle : notValidStyle}
           >
-            
-
             <img src={call} alt="call_icon" className="w-[15px] h-[15px]" />
             <input
               onChange={(e) => validMob(e)}
@@ -249,7 +300,7 @@ const Signup2 = () => {
               id="mob"
               placeholder="Mobile Number"
             />
-          </div>
+          </div> */}
 
           <div
             className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4"
@@ -297,15 +348,17 @@ const Signup2 = () => {
 
 {/* <input type="password" value={password} onChange={validatePassword} /> */}
           </div>
+
           <button
             onClick={(e) => handleSignUp(e)}
             className="block w-full bg-blue-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2"
-            disabled={!Email_valid || !Mob_valid || !Name_valid || !name || !email || !mob || !Pass_valid || !password}
+            disabled={!Email_valid  || !Name_valid || !name || !email  || !Pass_valid || !password}
           >
             Sign Up
           </button>
-          <div className="flex justify-between text-sm font-normal text-gray-600 mt-[20px]">
-          <p >
+         
+          <div className="flex justify-between text-sm font-normal text-gray-600 mt-[20px] ">
+          <p className="text-[14px] mt-[12px]">
           Already registered?
           </p>
 
@@ -313,21 +366,12 @@ const Signup2 = () => {
 
             <Link to='/login'>
             Log In
-            
             </Link>
                  
           </button>
           </div>
         
-          {/* <span className="text-sm ml-2 hover:text-blue-500 cursor-pointer">
-            <a
-              href="https://dashboard.analahinsurance.com/customer/login"
-              target="blank"
-            >
-              {" "}
-              Already have an account? Sign In
-            </a>
-          </span> */}
+         
         </form>
 
                 {alertVisible && (

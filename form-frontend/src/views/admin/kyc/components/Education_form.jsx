@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import upload_icon from "../assets/images/upload_icon.png";
 import AadhaarDrop from "./Aadhar_Drop";
-
+import EducationDrop from "./Education_Drop";
 
 const Education_form = ({onChangeEducation,isEmpty}) => {
   const [displayRequired, setDisplayRequired] = useState("hidden");
@@ -33,7 +33,7 @@ const Education_form = ({onChangeEducation,isEmpty}) => {
         </p>
       </div>
       <div>
-      <select name="education" id="education" className={`font-medium w-full mt-1 p-2 pl-3 rounded-full rounded-lg border ${redBorder} text-[#02295a] text-[15px] hover:border-[#02295a] focus:border-white focus:ring-[#bfe2fd] w-[50%] p-[14px] mt-[10px]`}   onChange={onChangeEducation}>
+      <select name="education" id="education"  className={`font-medium w-full mt-1 p-2 pl-3 rounded-full rounded-lg border ${redBorder} text-[#02295a] text-[15px] hover:border-[#02295a] focus:border-white focus:ring-[#bfe2fd] w-[50%] p-[14px] mt-[10px]`}   onChange={onChangeEducation}>
       <option value="10th Pass">10th Pass</option>
       <option value="12th Pass">12th Pass</option>
       <option value="Graduate">Graduate</option>
@@ -55,7 +55,8 @@ const Education_form = ({onChangeEducation,isEmpty}) => {
 
       {/* <input type="file" class="input-file mt-[5px]"></input> */}
 
-      <AadhaarDrop onFileChange={(files) => onFileChange(files)}/>
+      {/* <AadhaarDrop onFileChange={(files) => onFileChange(files)}/> */}
+      <EducationDrop onFileChange={(files) => onFileChange(files)}/>
 
         
       </div>

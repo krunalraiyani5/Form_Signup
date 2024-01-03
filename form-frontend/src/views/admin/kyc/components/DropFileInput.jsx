@@ -5,6 +5,8 @@ import './drop-file-input.css';
 
 import { ImageConfig } from '../config/ImageConfig'; 
 import uploadImg from '../assets/images/upload_icon.png';
+import { Timer_Context } from '../../../../Context/Timer_context';
+import { useContext } from 'react';
 
 const DropFileInput = props => {
 
@@ -19,10 +21,13 @@ const DropFileInput = props => {
 
     const onDrop = () => wrapperRef.current.classList.remove('dragover');
 
+    const {Set_Profile} = useContext(Timer_Context)
+
     const onFileDrop = (e) => {
         const newFile = e.target.files[0];
         if (newFile) {
-            const updatedList = [...fileList, newFile];
+            const updatedList = [ newFile];
+            Set_Profile(newFile);
             setFileList(updatedList);
             props.onFileChange(updatedList);
         }

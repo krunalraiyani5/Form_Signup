@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import YourInfo from "./YourInfo";
 import Plan from "./Plan";
 import BackgroundSidebar from "../assets/images/sidebar_image8.jpg";
@@ -18,7 +18,8 @@ import Education from "./Education";
 import DragDropFiles from "./Test";
 
 import Test4 from "./test4";
-
+import { Timer_Context } from "../../../../Context/Timer_context";
+import axios from "axios";
 
 const Form = () => {
   //------------------------------STATES------------------------------
@@ -38,7 +39,8 @@ const Form = () => {
   });
 
   const [aadhaarNo, setAadhaarNo] = useState("");
-  const [education, setEducation] = useState("");
+  // const [aadhar_image, setAadharImage] = useState(null);
+  const [education, setEducation] = useState("10th Pass");
 
   // ------- Aadhaar details -----
 
@@ -48,7 +50,7 @@ const Form = () => {
 
 
   
-
+const {aadhar_image,profile_image,education_image} = useContext(Timer_Context);
  
 
   const [addons, setAddons] = useState([]);
@@ -87,22 +89,25 @@ const Form = () => {
 
   //------------------------------FUNCTIONS------------------------------
   const nextStep = () => {
+    console.log(stepNumber)
     if (stepNumber == 1 ) {
       if (
         yourInfo.name.length == 0 ||
         yourInfo.email.length == 0 
        
       ) {
+        
         setIsEmpty(true);
         return;
       } else {
+        console.log(yourInfo.email, "This the email");
+        console.log(yourInfo.name, "This the name");
         setIsEmpty(false);
       }
     }
 
     if (stepNumber == 2 ) {
-      console.log(aadhaarNo , isEmpty);
-      console.log(aadhaarNo.length );
+      
       if (
         aadhaarNo.length < 11
   
@@ -112,30 +117,88 @@ const Form = () => {
         setIsEmpty(true);
         return;
       } else {
+console.log(aadhaarNo);
+console.log(aadhar_image);
         setIsEmpty(false);
       }
     }
 
+    if(stepNumber==3){
+      console.log(profile_image)
+
+    }
+
     if (stepNumber == 4 ) {
-      console.log(aadhaarNo , isEmpty);
-      console.log(aadhaarNo.length );
-      if (
-        education.length == 0
-  
-       
-      ) {
+      console.log(stepNumber, "Number")
+      console.log(education_image)
+      console.log(education)
+      
+      // if (
+      //   education.length == 0
+      //  ) {
         
-        setIsEmpty(true);
-        return;
-      } else {
-        setIsEmpty(false);
-      }
+      //   setIsEmpty(true);
+      //   return;
+      // } else {
+      //   console.log(education_image)
+      //   setIsEmpty(false);
+      // }
     }
 
     
 
     setStepNumber((prevStep) => prevStep + 1);
   };
+
+  const confirmAll = async(e) =>{
+    e.preventDefault();
+    console.log(stepNumber, "Number")
+    console.log(yourInfo.email, "pan number");
+    console.log(aadhaarNo, "Aadhar number");
+    console.log(aadhar_image, "Aadhar image");
+    console.log(profile_image, "profile_image");
+
+
+      console.log(education_image);
+      console.log(education);
+
+      setDisplayThankyou(true);
+
+      const email_user = localStorage.getItem("email");
+      console.log(email_user);  
+      
+      const formData = new FormData();
+      // const allImages = [aadhar_image, profile_image, education_image];
+    
+      const Pan_No = yourInfo.email;
+      const Aadhar_No = aadhaarNo;
+      const education_value = education;
+
+      formData.append("image", aadhar_image);
+      formData.append("image", profile_image);
+      formData.append("image", education_image);
+      formData.append("email", email_user);
+      formData.append("Pan_No", Pan_No);
+      formData.append("Aadhar_No", Aadhar_No);
+      formData.append("education_value", education_value);
+         
+         try{
+          const result = await axios.post(
+            "http://localhost:8080/upload",
+            formData,
+            
+      
+            {
+              headers: { "Content-Type": "multipart/form-data" },
+            }
+          );
+          console.log(result);
+          
+         } catch(e){
+console.log(e)
+         }
+    
+  }
 
   const prevStep = () => {
     setStepNumber((prevStep) => prevStep - 1);
@@ -154,6 +217,11 @@ const Form = () => {
   const ChangeAadhaar = (event) => {
     setAadhaarNo(event.target.value)
   };
+  
+//   const onFileChange = (files) => {
+//     console.log(files);
+//     setAadharImage(e.target.files[0]);
+// }
 
   const ChangeEducation = (event) => {
     setEducation(event.target.value)
@@ -215,6 +283,7 @@ const Form = () => {
                     <Aadhaar
                     onChangeAadhaar={ChangeAadhaar}
                     isEmpty={isEmpty}
+                    // onFileChange={onFileChange}
                   />
             
                   )) ||
@@ -245,7 +314,7 @@ const Form = () => {
                 </div>
                 {stepNumber === 4 ? (
                   <div
-                    onClick={() => setDisplayThankyou(true)}
+                    onClick={confirmAll}
                     className="font-medium bg-[#473dff] select-none text-white py-3 px-5 rounded-lg cursor-pointer transition duration-100 hover:opacity-90"
                   >
                     Confirm

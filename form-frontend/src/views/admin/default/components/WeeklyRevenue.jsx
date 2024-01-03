@@ -173,7 +173,7 @@ const WeeklyRevenue = () => {
                 <p className='text-[18px] font-bold'>Rules & Regulations</p>
 
                 <p className='mt-[22px] text-[#525252] text-[14px] font-200 text-justify'>
-                Candidate has to undergo mandatory 50 / 25 hours of Brokers’ Training before enrolling for the examination. Candidate has to pay separately for registration of examination by paying stipulated fees.
+                Candidate has to undergo mandatory 15 hours of Brokers’ Training before enrolling for the examination. Candidate has to pay separately for registration of examination by paying stipulated fees.
                 </p>
 
                 <p className='mt-[5px] text-[#525252] text-[14px] font-200 text-justify'>
@@ -241,7 +241,7 @@ const WeeklyRevenue = () => {
                 <p className='text-[18px] font-bold'>Rules & Regulations</p>
 
                 <p className='mt-[22px] text-[#525252] text-[14px] font-200 text-justify'>
-                Candidate has to undergo mandatory 50 / 25 hours of Brokers’ Training before enrolling for the examination. Candidate has to pay separately for registration of examination by paying stipulated fees.
+                Candidate has to undergo mandatory 15 hours of Brokers’ Training before enrolling for the examination. Candidate has to pay separately for registration of examination by paying stipulated fees.
                 </p>
 
                 <p className='mt-[5px] text-[#525252] text-[14px] font-200 text-justify'>

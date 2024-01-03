@@ -5,11 +5,12 @@ import AadhaarDrop from "./Aadhar_Drop";
 const FormField_Aadhaar = ({onChangeAadhaar,isEmpty}) => {
   const [displayRequired, setDisplayRequired] = useState("hidden");
   const [redBorder, setRedBorder] = useState("border-[#d6d9e6]");
-  const [aadhaarNo, setAadhaarNo] = useState("");
-  
+  // const [aadhar_image, setAadharImage] = useState(null);
+ 
   
   const onFileChange = (files) => {
     console.log(files);
+    // setAadharImage(e.target.files[0]);
 }
 
   useEffect(() => {

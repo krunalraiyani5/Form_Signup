@@ -34,7 +34,7 @@ const YourInfo = ({ yourInfo, onChangeYourInfo, isEmpty }) => {
       <SectionHeading
       style={styles.header}
        title="PAN Card"
-        desc="Submitting your PAN card is necessary for carrying out any financial transactions"
+        desc="Submitting your PAN card is necessary for carrying out any financial transactions."
       />
 
       <form>

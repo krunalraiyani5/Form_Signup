@@ -948,7 +948,7 @@ h1.ui.header {
 
 button {
   padding: 1rem;
-  margin: 1rem;
+  /* margin: 1rem; */
   font-size: medium;
 }
 
@@ -1108,6 +1108,10 @@ button {
 	margin: 10px;
 	padding: 7.5px 50px;
 	cursor: pointer;
+}
+
+p:first-child {
+  margin-top: 14px;
 }
 
 
