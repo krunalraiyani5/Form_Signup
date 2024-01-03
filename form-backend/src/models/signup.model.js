@@ -22,7 +22,7 @@ const SignupSchema = new mongoose.Schema({
 
     remainingTime: {
         type: Number,
-        default: 43200000,
+        default: 120000,
         required: true
       },
 })
