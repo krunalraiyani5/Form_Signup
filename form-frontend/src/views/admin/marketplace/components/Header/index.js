@@ -31,19 +31,9 @@ const Header = () => {
   return (
     <Menu stackable inverted className=''>
       <Menu.Item header>
-        <h1> POS Exam </h1>
+        <h1 > POS Exam </h1>
       </Menu.Item>
-      {/* {promptEvent && !isAppInstalled && (
-        <Menu.Item position="right">
-          <Button
-            color="teal"
-            icon="download"
-            labelPosition="left"
-            content="Install App"
-            onClick={installApp}
-          />
-        </Menu.Item>
-      )} */}
+      
     </Menu>
   );
 };

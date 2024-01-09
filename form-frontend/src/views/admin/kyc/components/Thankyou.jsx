@@ -13,7 +13,7 @@ const Thankyou = () => {
         taking the time to complete your Know Your Customer (KYC) details with
         us. If you ever need support, Please feel free to email us at&nbsp;
 
-        <a href="mailto:contactus@analahinsurance.com">
+        <a href="mailto:contactus@analahinsurance.com" className="text-blue">
 
         contactus@analahinsurance.com
         </a>

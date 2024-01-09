@@ -883,9 +883,9 @@ color:#00A465;
   border: 0 solid transparent;
   background: #00A465;
   box-shadow: none;
-  width: 57%;
-  margin: auto;
+  width: 5%;
   margin-top: 50px;
+  margin-left: 401px;
 }
 
 .ui.massive.vertical.menu {
@@ -1112,6 +1112,23 @@ button {
 
 p:first-child {
   margin-top: 14px;
+}
+
+.Exam_Header_first{
+  color: #14AE5C;
+font-size: 30px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+
+}
+.Exam_Header_text{
+  color: #595959;
+  text-align: justify;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 

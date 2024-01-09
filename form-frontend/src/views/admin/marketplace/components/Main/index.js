@@ -8,7 +8,7 @@ import {
   Button,
   Message,
 } from 'semantic-ui-react';
-import Exam_vector from "../../../../../assets/Icon/exam_vector.png";
+import Exam_vector from "../../../../../assets/Icon/Exam_Vector2.png";
 
 
 import Offline from '../Offline';
@@ -108,25 +108,23 @@ console.log(countdownTime&& true)
       {/* <!-- Right column container --> */}
       <div class="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
       <div className="exam-intro-container p-5 leading-10 text-[16px] text-black">
-      <h2 className='font-bold  text-[22px] mb-[16px] mt-[-10px]'>Welcome to the Sales Proficiency Exam!</h2>
-      <p >
+      <h2 className='Exam_Header_first font-worksans'>Welcome to the Sales Proficiency Exam!</h2>
+      <p className='Exam_Header_text font-worksans'>
         This exam is designed to evaluate your knowledge and skills as a POSP.
-        
-        
       </p>
-      <p className=''>
+      <p className='Exam_Header_text worksans'>
       It consists of multiple-choice questions covering various aspects of sales, including fundamentals, product knowledge, closing techniques, and sales ethics.
       </p>
       <p className='font-bold'>
         Instructions:
       </p>
-      <ul>
-        <li>Read each question carefully before selecting an answer.</li>
-        <li>Choose the best answer for each question; there is only one correct answer.</li>
-        <li>Click "Submit" when you have answered all the questions.</li>
-        <li>Your results will be displayed at the end of the exam.</li>
+      <ul className='Exam_Header_text worksans '>
+        <li className='Exam_Header_text worksans mt-[5px]'>Read each question carefully before selecting an answer.</li>
+        <li className='Exam_Header_text worksans mt-[5px]'>Choose the best answer for each question; there is only one correct answer.</li>
+        <li className='Exam_Header_text worksans mt-[5px]'>Click "Submit" when you have answered all the questions.</li>
+        <li className='Exam_Header_text worksans mt-[5px]'>Your results will be displayed at the end of the exam.</li>
       </ul>
-      <p>
+      <p className='Exam_Header_text worksans'>
         Best of luck! Let's get started.
       </p>
       <div className='mt-[5px]'>
