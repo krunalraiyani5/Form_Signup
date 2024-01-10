@@ -5,7 +5,7 @@ const Signup = require("../models/signup.model");
 
 const { v4: uuidv4 } = require('uuid')
 app.post("/signup", async (req, res) => {
-  const { email, name, mobile, password } = req.body;
+  const { email, name, password, pan } = req.body;
     
   try {
     let user = await Signup.find({ email });
