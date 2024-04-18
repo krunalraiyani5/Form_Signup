@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import {
   Container,
   Segment,
@@ -10,13 +10,13 @@ import {
   Message,
   Menu,
   Header,
-} from 'semantic-ui-react';
-import he from 'he';
+} from "semantic-ui-react";
+import he from "he";
 
-import Countdown from '../Countdown';
+import Countdown from "../Countdown";
 
-import { getLetter } from '../../utils';
-import axios from 'axios';
+import { getLetter } from "../../utils";
+import axios from "axios";
 
 const Quiz = ({ data, countdownTime, endQuiz }) => {
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -28,9 +28,8 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
   const [timeTaken, setTimeTaken] = useState(null);
   const [user_answers, setUserAnswer] = useState([]);
 
-
   useEffect(() => {
-    if (questionIndex > 0) window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (questionIndex > 0) window.scrollTo({ top: 0, behavior: "smooth" });
   }, [questionIndex]);
 
   const handleItemClick = (e, { name }) => {
@@ -39,13 +38,11 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
   };
 
   const handleNext = async () => {
-
     const qna = questionsAndAnswers;
 
-    user_answers.push(userSlectedAns)
+    user_answers.push(userSlectedAns);
     console.log(userSlectedAns);
     console.log(user_answers);
-
 
     qna.push({
       question: 5,
@@ -55,39 +52,37 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
     });
 
     if (questionIndex === data.length - 1) {
-      let email= localStorage.getItem('email');
+      let email = localStorage.getItem("email");
       const all_answers = {
         user_answers,
-        email
-      }
+        email,
+      };
 
-      const API = `https://pos-registration.onrender.com/answers`;
+      const API = `http://3.110.120.207/answers`;
 
       const headers = {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       };
 
       try {
         // const res = await fetch(`${API}`);
         const response = await fetch(API, {
-          method: 'POST',
+          method: "POST",
           headers: headers,
           body: JSON.stringify(all_answers),
         });
         const res = await response.json();
         console.log(res, "answers consoled");
         localStorage.setItem("exam", true);
-        localStorage.setItem("date", res.date)
-        console.log(res.points)
+        localStorage.setItem("date", res.date);
+        console.log(res.points);
         const convertedNumber = parseInt(res.points, 10);
-        console.log(res.points>20)
-        if(res.points>20){
-          
-          localStorage.setItem("points", true)
-        }else{
-          localStorage.setItem("points", false)
+        console.log(res.points > 20);
+        if (res.points > 20) {
+          localStorage.setItem("points", true);
+        } else {
+          localStorage.setItem("points", false);
         }
-
 
         return endQuiz({
           totalQuestions: data.length,
@@ -95,74 +90,58 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
           timeTaken,
           questionsAndAnswers: qna,
         });
-       }
-      catch (e) {
-        console.log(e)
-
+      } catch (e) {
+        console.log(e);
       }
-
-
     }
-
 
     setQuestionIndex(questionIndex + 1);
     setUserSlectedAns(null);
-
   };
 
   const timeOver = async (timeTaken) => {
-    let email= localStorage.getItem('email');
+    let email = localStorage.getItem("email");
     const all_answers = {
       user_answers,
-      email
-    }
+      email,
+    };
 
-    const API = `https://pos-registration.onrender.com/answers`;
+    const API = `http://3.110.120.207/answers`;
 
     const headers = {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     };
 
     try {
       // const res = await fetch(`${API}`);
       const response = await fetch(API, {
-        method: 'POST',
+        method: "POST",
         headers: headers,
         body: JSON.stringify(all_answers),
-        
       });
       const res = await response.json();
       console.log(res);
-      localStorage.setItem("exam", true)
-      localStorage.setItem("date", res.date)
-      console.log(res.points)
+      localStorage.setItem("exam", true);
+      localStorage.setItem("date", res.date);
+      console.log(res.points);
       const convertedNumber = parseInt(res.points, 10);
-      console.log(res.points>20)
-      if(res.points>20){
-        
-        localStorage.setItem("points", true)
-      }else{
-        localStorage.setItem("points", false)
+      console.log(res.points > 20);
+      if (res.points > 20) {
+        localStorage.setItem("points", true);
+      } else {
+        localStorage.setItem("points", false);
       }
       return endQuiz({
         totalQuestions: data.length,
         correctAnswers: res.points,
         timeTaken,
-        questionsAndAnswers
+        questionsAndAnswers,
       });
 
-     
       // console.log(data.data)
-
-
+    } catch (e) {
+      console.log(e);
     }
-    catch (e) {
-      console.log(e)
-    }
-
-
-
-    
   };
 
   return (
@@ -175,7 +154,7 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
                 <Item.Extra>
                   <Header as="h1" block floated="left">
                     <Icon name="info circle" />
-                    <Header.Content className='question'>
+                    <Header.Content className="question">
                       {`Question No.${questionIndex + 1} of ${data.length}`}
                     </Header.Content>
                   </Header>
@@ -196,15 +175,13 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
                   </Item.Description>
                   <Divider />
                   <Menu vertical fluid size="massive">
-
                     <Menu.Item
                       key={data[questionIndex].Options["a"]}
                       name={"a"}
                       active={userSlectedAns === "a"}
                       onClick={handleItemClick}
-                      className='options'
-                    // style={userSlectedAns === data[questionIndex].Options["a"] ? {backgroundColor: "#9dbef5"}: {}}
-
+                      className="options"
+                      // style={userSlectedAns === data[questionIndex].Options["a"] ? {backgroundColor: "#9dbef5"}: {}}
                     >
                       <b>A.</b>
                       &nbsp; {data[questionIndex].Options["a"]}
@@ -215,7 +192,7 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
                       name={"b"}
                       active={userSlectedAns === "b"}
                       onClick={handleItemClick}
-                      className='options'
+                      className="options"
                     >
                       <b>B.</b>
                       &nbsp; {data[questionIndex].Options["b"]}
@@ -226,7 +203,7 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
                       name={"c"}
                       active={userSlectedAns === "c"}
                       onClick={handleItemClick}
-                      className='options'
+                      className="options"
                     >
                       <b>C.</b>
                       &nbsp; {data[questionIndex].Options["c"]}
@@ -236,7 +213,7 @@ const Quiz = ({ data, countdownTime, endQuiz }) => {
                       name={"d"}
                       active={userSlectedAns === "d"}
                       onClick={handleItemClick}
-                      className='options'
+                      className="options"
                     >
                       <b>D.</b>
                       &nbsp; {data[questionIndex].Options["d"]}
